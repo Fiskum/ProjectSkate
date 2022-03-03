@@ -8,9 +8,14 @@ public class Jumping : MonoBehaviour
     public float jumpAmount = 35;
     public float gravityScale = 10;
     public float fallingGravityScale = 40;
+
+    public void Jump()
+    {
+        rb.AddForce(Vector2.up * jumpAmount, ForceMode2D.Impulse);
+    }
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.W))
+        if (Input.GetKeyDown(KeyCode.W) && rb.velocity.y == Mathf.Round(rb.velocity.y))
         {
             rb.AddForce(Vector2.up * jumpAmount, ForceMode2D.Impulse);
         }
