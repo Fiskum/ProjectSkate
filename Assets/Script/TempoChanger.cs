@@ -16,12 +16,12 @@ public class TempoChanger : MonoBehaviour
         
         audioSpeed = 1;
         audioSource.pitch = audioSpeed;
-        //audioSource.outputAudioMixerGroup.audioMixer.SetFloat("Pitch", 1f / audioSpeed);
+        audioSource.outputAudioMixerGroup.audioMixer.SetFloat("Pitch", 1f / audioSpeed);
     }
     void Update()
     {
         audioSource.pitch = audioSpeed;
         audioSpeed = Mathf.Log10(pitch.value) * 0.8f;
-        //audioSource.outputAudioMixerGroup.audioMixer.SetFloat("Pitch", 1f / audioSpeed);
+        audioSource.outputAudioMixerGroup.audioMixer.SetFloat("Pitch", 1f / audioSpeed);
     }
 }
