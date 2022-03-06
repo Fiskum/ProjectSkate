@@ -1876,6 +1876,7 @@ MonoBehaviour:
   goal_x: 783.2
   death_y: -33.7
   playerTransform: {fileID: 1564586164}
+  UI_Timer: {fileID: 0}
 --- !u!4 &889704822
 Transform:
   m_ObjectHideFlags: 0
@@ -3813,6 +3814,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8132431810915670454, guid: 35f102a03a4f3d44fa7e35c58e8efedd, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 128.4372
+      objectReference: {fileID: 0}
+    - target: {fileID: 8132431810915670454, guid: 35f102a03a4f3d44fa7e35c58e8efedd, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 36.0777
+      objectReference: {fileID: 0}
+    - target: {fileID: 8132431810915670454, guid: 35f102a03a4f3d44fa7e35c58e8efedd, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 327.78
+      objectReference: {fileID: 0}
+    - target: {fileID: 8132431810915670454, guid: 35f102a03a4f3d44fa7e35c58e8efedd, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -18.039
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 35f102a03a4f3d44fa7e35c58e8efedd, type: 3}
 --- !u!1 &1751248854
@@ -4283,8 +4300,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -26.1389, y: -0.0005188}
-  m_SizeDelta: {x: 587.7222, y: 360.08}
+  m_AnchoredPosition: {x: -26.1389, y: -0.02025}
+  m_SizeDelta: {x: 587.7222, y: 360.04}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1853467280
 MonoBehaviour:
