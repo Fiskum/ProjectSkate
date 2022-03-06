@@ -35,6 +35,8 @@ public class Manager_Game : MonoBehaviour
     public GameObject UI_VictoryScreen_HighScore;
     public Button UI_VictoryScreen_Return;
 
+    [Header("Music")]
+    public AudioSource music;
     // Start is called before the first frame update
 
     void Awake()
@@ -191,6 +193,7 @@ public class Manager_Game : MonoBehaviour
     void RestartApp()
     {
         MenuManager.OpenMenu(Menu.Chapter_Select, gameObject);
+        music.Stop();
         // SceneManager.LoadScene(0);
     }
 
