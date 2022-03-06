@@ -5,7 +5,9 @@ using UnityEngine.UI;
 
 public class Manager_Game : MonoBehaviour
 {
-				[Header("Values")]
+
+
+    [Header("Values")]
     public float timer;
     public float timer_unPause = 2f;
     public float goal_x = 783.2f;
@@ -18,14 +20,21 @@ public class Manager_Game : MonoBehaviour
 
     [Header("Assignable UI Elements")]
     public Text UI_Timer;
-
-
+    [Header("Lose Screen")]
+    public GameObject UI_PauseScreen;
+    public Text UI_PauseScreen_Time;
+    public Slider UI_PauseScreen_Progress;
+    public Text UI_PauseScreen_Percentage;
+    [Header("Victory Screen")]
+    public GameObject UI_VictoryScreen;
+    public Text UI_VictoryScreen_Time;
+    public GameObject UI_VictoryScreen_HighScore;
 
     // Start is called before the first frame update
 
     void Awake()
     {
-  
+
         if (playerTransform != null)
         {
             playerDefaultPosition = playerTransform.position;
@@ -47,17 +56,23 @@ public class Manager_Game : MonoBehaviour
             timer_unPause -= Time.deltaTime;
 
             if (timer_unPause < 0)
+            {
                 PauseGame();
- 
+                timer = 0;
+
+                UI_PauseScreen.SetActive(false);
+                UI_VictoryScreen.SetActive(false);
+            }
+
         }
-        
+
 
         bool isPaused = playerRigid.isKinematic == true;
 
-        
 
 
-        if(!isPaused)
+
+        if (!isPaused)
             InGame();
 
 
@@ -76,20 +91,50 @@ public class Manager_Game : MonoBehaviour
 
         Vector2 playerPosition = playerTransform.position;
 
-        if(playerPosition.y < death_y)
-								{
-            Restart();
-								}
+        if (playerPosition.y < death_y)
+        {
+            OnLose();
+
+        }
 
         if (playerPosition.x > goal_x)
         {
-            Restart();
+            OnVictory();
         }
     }
 
 
+    public void OnLose()
+    {
+        if (UI_PauseScreen != null)
+        {
+            UI_PauseScreen.SetActive(true);
+            UI_PauseScreen_Time.text = TimerToClock(timer);
+
+
+            float totalDistance = goal_x + playerDefaultPosition.x;
+            float progress = playerTransform.position.x / totalDistance;
+
+            UI_PauseScreen_Progress.value = progress;
+            UI_PauseScreen_Percentage.text = "" + Mathf.Floor(progress * 100) + "%";
+        }
+
+        Restart();
+    }
+
+    public void OnVictory()
+    {
+        if (UI_VictoryScreen != null)
+        {
+            UI_VictoryScreen.SetActive(true);
+            UI_VictoryScreen_Time.text = TimerToClock(timer);
+        }
+
+        Restart();
+    }
+
     public void PauseGame()
-				{
+    {
         bool isPaused = playerRigid.bodyType == RigidbodyType2D.Static;
 
 
@@ -115,14 +160,41 @@ public class Manager_Game : MonoBehaviour
     {
         if (UI_Timer != null)
         {
-            float minutes = Mathf.Floor(timer / 60);
-            float seconds = Mathf.Floor(timer) - minutes * 60;
-            float milliseconds = Mathf.Floor(timer * 100) - minutes * 6000 - seconds * 100;
-            float microseconds = Mathf.Floor(timer * 10000) - minutes * 600000 - seconds * 10000 - milliseconds * 100;
 
-            UI_Timer.text = (seconds < 10 ? "0" : "") + seconds + (milliseconds < 10 ? ":0" : ":") + milliseconds + (microseconds < 10 ? ":0" : ":") + microseconds;
+            if (timer_unPause != -1)
+                UI_Timer.text = TimerToClock(timer_unPause);
+            else
+                UI_Timer.text = TimerToClock(timer);
 
-            UI_Timer.transform.localScale = Vector3.one * (milliseconds < 10 ? 1.2f : 1);
+
+            //UI_Timer.transform.localScale = Vector3.one * (milliseconds < 10 ? 1.2f : 1);
+        }
+
+
+        if (UI_PauseScreen != null)
+        {
+
         }
     }
+
+
+				#region tools
+
+    static string TimerToClock(float currentTime)
+    {
+        float minutes = Mathf.Floor(currentTime / 60);
+        float seconds = Mathf.Floor(currentTime) - minutes * 60;
+        float milliseconds = Mathf.Floor(currentTime * 100) - minutes * 6000 - seconds * 100;
+        float microseconds = Mathf.Floor(currentTime * 10000) - minutes * 600000 - seconds * 10000 - milliseconds * 100;
+
+        string clockTime = "";
+
+        if (minutes < 1)
+            clockTime = (seconds < 10 ? "0" : "") + seconds + (milliseconds < 10 ? ":0" : ":") + milliseconds + (microseconds < 10 ? ":0" : ":") + microseconds;
+        else
+            clockTime = (minutes < 10 ? "0" : "") + minutes + (seconds < 10 ? ":0" : ":") + seconds + (milliseconds < 10 ? ":0" : ":") + milliseconds;
+
+        return clockTime;
+    }
+				#endregion
 }
