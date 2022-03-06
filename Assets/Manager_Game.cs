@@ -22,6 +22,9 @@ public class Manager_Game : MonoBehaviour
     [Header("Assignable UI Elements")]
     public Text UI_Timer;
 
+    [Header("Pause Screen")]
+    public GameObject UI_Pause;
+
     [Header("Lose Screen")]
     public GameObject UI_PauseScreen;
     public Text UI_PauseScreen_Time;
@@ -155,7 +158,6 @@ public class Manager_Game : MonoBehaviour
 
 
         timer_unPause = -1;
-
 
     }
 

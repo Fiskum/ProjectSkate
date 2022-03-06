@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class Pause : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public AudioSource Music;
+
+    public void PauseMusic()
     {
-        
+        Music.Pause();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void UnPauseMusic()
     {
-        
+        Music.Play();
     }
 }
