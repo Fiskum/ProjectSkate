@@ -12,6 +12,6 @@ public class LevelSelect : MonoBehaviour
     }
     public void OnClick_Back()
     {
-        MenuManager.OpenMenu(Menu.Chapter_Select, gameObject);
+       
     }
 }

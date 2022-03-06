@@ -58,9 +58,6 @@ public class Options : MonoBehaviour
     {
         
     }
-    public void OnClick_Back()
-    {
-        MenuManager.OpenMenu(Menu.Main_Menu, gameObject);
-    }
+
 
 }

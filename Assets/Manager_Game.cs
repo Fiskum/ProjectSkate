@@ -58,6 +58,7 @@ public class Manager_Game : MonoBehaviour
         timer_unPause = 2;
     }
 
+
     // Update is called once per frame
     void Update()
     {
@@ -194,7 +195,7 @@ public class Manager_Game : MonoBehaviour
 
     void RestartApp()
     {
-        MenuManager.OpenMenu(Menu.Chapter_Select, gameObject);
+     
         music.Stop();
         // SceneManager.LoadScene(0);
     }
