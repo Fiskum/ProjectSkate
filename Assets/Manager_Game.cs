@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Manager_Game : MonoBehaviour
 {
@@ -20,15 +21,19 @@ public class Manager_Game : MonoBehaviour
 
     [Header("Assignable UI Elements")]
     public Text UI_Timer;
+
     [Header("Lose Screen")]
     public GameObject UI_PauseScreen;
     public Text UI_PauseScreen_Time;
     public Slider UI_PauseScreen_Progress;
     public Text UI_PauseScreen_Percentage;
+    public Button UI_PauseScreen_Return;
+
     [Header("Victory Screen")]
     public GameObject UI_VictoryScreen;
     public Text UI_VictoryScreen_Time;
     public GameObject UI_VictoryScreen_HighScore;
+    public Button UI_VictoryScreen_Return;
 
     // Start is called before the first frame update
 
@@ -117,6 +122,9 @@ public class Manager_Game : MonoBehaviour
 
             UI_PauseScreen_Progress.value = progress;
             UI_PauseScreen_Percentage.text = "" + Mathf.Floor(progress * 100) + "%";
+
+            UI_PauseScreen_Return.onClick.RemoveAllListeners();
+            UI_PauseScreen_Return.onClick.AddListener(RestartApp);
         }
 
         Restart();
@@ -128,6 +136,9 @@ public class Manager_Game : MonoBehaviour
         {
             UI_VictoryScreen.SetActive(true);
             UI_VictoryScreen_Time.text = TimerToClock(timer);
+
+            UI_VictoryScreen_Return.onClick.RemoveAllListeners();
+            UI_VictoryScreen_Return.onClick.AddListener(RestartApp);
         }
 
         Restart();
@@ -177,6 +188,11 @@ public class Manager_Game : MonoBehaviour
         }
     }
 
+    void RestartApp()
+    {
+        MenuManager.OpenMenu(Menu.Chapter_Select, gameObject);
+        // SceneManager.LoadScene(0);
+    }
 
 				#region tools
 
