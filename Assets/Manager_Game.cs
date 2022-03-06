@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Manager_Game : MonoBehaviour
 {
@@ -15,7 +16,10 @@ public class Manager_Game : MonoBehaviour
     private Rigidbody2D playerRigid;
     private Vector3 playerDefaultPosition;
 
- 
+    [Header("Assignable UI Elements")]
+    public Text UI_Timer;
+
+
 
     // Start is called before the first frame update
 
@@ -55,6 +59,15 @@ public class Manager_Game : MonoBehaviour
 
         if(!isPaused)
             InGame();
+
+
+
+
+
+
+        UpdateUI();
+
+
     }
 
     void InGame()
@@ -95,5 +108,21 @@ public class Manager_Game : MonoBehaviour
 
         PauseGame();
         timer_unPause = 2;
+    }
+
+
+    void UpdateUI()
+    {
+        if (UI_Timer != null)
+        {
+            float minutes = Mathf.Floor(timer / 60);
+            float seconds = Mathf.Floor(timer) - minutes * 60;
+            float milliseconds = Mathf.Floor(timer * 100) - minutes * 6000 - seconds * 100;
+            float microseconds = Mathf.Floor(timer * 10000) - minutes * 600000 - seconds * 10000 - milliseconds * 100;
+
+            UI_Timer.text = (seconds < 10 ? "0" : "") + seconds + (milliseconds < 10 ? ":0" : ":") + milliseconds + (microseconds < 10 ? ":0" : ":") + microseconds;
+
+            UI_Timer.transform.localScale = Vector3.one * (milliseconds < 10 ? 1.2f : 1);
+        }
     }
 }
