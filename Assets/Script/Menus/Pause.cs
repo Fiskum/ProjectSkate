@@ -9,10 +9,12 @@ public class Pause : MonoBehaviour
     public void PauseMusic()
     {
         Music.Pause();
+        Manager_Game.GetManager().PauseGame();
     }
 
     public void UnPauseMusic()
     {
         Music.Play();
+        Manager_Game.GetManager().UnPauseGame();
     }
 }

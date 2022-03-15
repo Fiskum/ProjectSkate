@@ -6,7 +6,12 @@ using UnityEngine.SceneManagement;
 
 public class Manager_Game : MonoBehaviour
 {
+    public enum GameStates
+    {
+        Playing, Pause, Countdown
+    }
 
+    public GameStates gameState = GameStates.Pause;
 
     [Header("Values")]
     public float timer;
@@ -55,45 +60,30 @@ public class Manager_Game : MonoBehaviour
 
 
         PauseGame();
-        timer_unPause = 2;
+        //Unpause();
     }
 
 
     // Update is called once per frame
     void Update()
     {
-        if (timer_unPause != -1)
+        if (gameState == GameStates.Pause)
         {
-            timer_unPause -= Time.deltaTime;
-
-            if (timer_unPause < 0)
+            if (timer_unPause != -1)
             {
-                PauseGame();
-                timer = 0;
+                timer_unPause -= Time.deltaTime;
 
-                UI_PauseScreen.SetActive(false);
-                UI_VictoryScreen.SetActive(false);
+                if (timer_unPause < 0)
+                    UnPauseGame(-1);
             }
-
         }
 
 
-        bool isPaused = playerRigid.isKinematic == true;
-
-
-
-
-        if (!isPaused)
+        if (gameState == GameStates.Playing)
             InGame();
 
 
-
-
-
-
         UpdateUI();
-
-
     }
 
     void InGame()
@@ -152,14 +142,26 @@ public class Manager_Game : MonoBehaviour
 
     public void PauseGame()
     {
-        bool isPaused = playerRigid.bodyType == RigidbodyType2D.Static;
-
-
-        playerRigid.bodyType = isPaused ? RigidbodyType2D.Dynamic : RigidbodyType2D.Static;
-
-
+        gameState = GameStates.Pause;
         timer_unPause = -1;
 
+        playerRigid.bodyType = RigidbodyType2D.Static;
+    }
+
+    /// UnPauseDelay is the delay between unpausing, and the game resuming again. Leave it blank for the default, which is 2 seconds.
+    public void UnPauseGame(float unPauseDelay = 2)
+    {
+        if (unPauseDelay != -1)
+        {
+            timer_unPause = unPauseDelay;
+            return;
+        }
+
+        UI_PauseScreen.SetActive(false);
+        UI_VictoryScreen.SetActive(false);
+
+        playerRigid.bodyType = RigidbodyType2D.Dynamic;
+        gameState = GameStates.Playing;
     }
 
     public void Restart()
@@ -168,7 +170,7 @@ public class Manager_Game : MonoBehaviour
         timer = 0;
 
         PauseGame();
-        timer_unPause = 2;
+        UnPauseGame();
     }
 
 
@@ -218,5 +220,11 @@ public class Manager_Game : MonoBehaviour
 
         return clockTime;
     }
+
+    public static Manager_Game GetManager()
+    {
+        return GameObject.Find("_ScriptManager").GetComponent<Manager_Game>();
+    }
+
 				#endregion
 }
