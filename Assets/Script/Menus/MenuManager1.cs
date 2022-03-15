@@ -65,5 +65,10 @@ public class MenuManager1 : MonoBehaviour
         UI_HTP.SetActive(true);
     }
 
+    public void StartLevel()
+    {
+        Manager_Game.GetManager().UnPauseGame();
+    }
+
 
 }
