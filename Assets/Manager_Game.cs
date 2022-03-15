@@ -179,10 +179,11 @@ public class Manager_Game : MonoBehaviour
         if (UI_Timer != null)
         {
 
-            if (timer_unPause != -1)
-                UI_Timer.text = TimerToClock(timer_unPause);
-            else
+            if (gameState == GameStates.Playing)
                 UI_Timer.text = TimerToClock(timer);
+            else
+                UI_Timer.text = TimerToClock(timer_unPause);
+          
 
 
             //UI_Timer.transform.localScale = Vector3.one * (milliseconds < 10 ? 1.2f : 1);
