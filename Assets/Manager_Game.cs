@@ -14,6 +14,7 @@ public class Manager_Game : MonoBehaviour
     public GameStates gameState = GameStates.Pause;
 
     [Header("Values")]
+    public float timerStartingValue = 30;
     public float timer;
     public float timer_unPause = 2f;
     public float goal_x = 783.2f;
@@ -58,6 +59,7 @@ public class Manager_Game : MonoBehaviour
         else
             Debug.LogError("ERROR: Please assign the player object to the 'playerTransform' variable.");
 
+        Restart();
 
         PauseGame();
         //Unpause();
@@ -88,11 +90,11 @@ public class Manager_Game : MonoBehaviour
 
     void InGame()
     {
-        timer += Time.deltaTime;
+        timer -= Time.deltaTime;
 
         Vector2 playerPosition = playerTransform.position;
 
-        if (playerPosition.y < death_y)
+        if (playerPosition.y < death_y || timer <= 0)
         {
             OnLose();
 
@@ -109,8 +111,11 @@ public class Manager_Game : MonoBehaviour
     {
         if (UI_PauseScreen != null)
         {
+            if (timer <= 0)
+                timer = 0; // This is to ensure the final time won't be a negative number.
+
             UI_PauseScreen.SetActive(true);
-            UI_PauseScreen_Time.text = TimerToClock(timer);
+            UI_PauseScreen_Time.text = TimerToClock(timerStartingValue - timer);
 
 
             float totalDistance = goal_x + playerDefaultPosition.x;
@@ -131,7 +136,7 @@ public class Manager_Game : MonoBehaviour
         if (UI_VictoryScreen != null)
         {
             UI_VictoryScreen.SetActive(true);
-            UI_VictoryScreen_Time.text = TimerToClock(timer);
+            UI_VictoryScreen_Time.text = TimerToClock(timerStartingValue - timer);
 
             UI_VictoryScreen_Return.onClick.RemoveAllListeners();
             UI_VictoryScreen_Return.onClick.AddListener(RestartApp);
@@ -167,7 +172,7 @@ public class Manager_Game : MonoBehaviour
     public void Restart()
     {
         playerTransform.position = playerDefaultPosition;
-        timer = 0;
+        timer = timerStartingValue;
 
         PauseGame();
         UnPauseGame();
