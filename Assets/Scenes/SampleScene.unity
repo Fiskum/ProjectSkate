@@ -2429,7 +2429,6 @@ MonoBehaviour:
   clockPickupPrefab: {fileID: 2051182857752078004, guid: 630f9397e064337449e7b48d42395bdc, type: 3}
   respawnTime: 5
   manager_Game: {fileID: 889704821}
-  cam: {fileID: 0}
   top: 10
   bottom: 10
 --- !u!4 &943096677
