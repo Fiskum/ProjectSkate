@@ -12,6 +12,7 @@ public class Manager_Game : MonoBehaviour
     }
 
     public GameStates gameState = GameStates.Pause;
+    public bool isPaused { get { return gameState == GameStates.Pause; } }
 
     [Header("Values")]
     public float timerStartingValue = 30;
