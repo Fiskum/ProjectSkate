@@ -5,6 +5,7 @@ using UnityEngine;
 public class ClockPickup : MonoBehaviour
 {
     private Vector2 screenBounds;
+    public float timeAdded = 5;
 
     private void Start()
     {
@@ -27,7 +28,7 @@ public class ClockPickup : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            Manager_Game.GetManager().timer += 5;
+            Manager_Game.GetManager().timer += timeAdded;
             Destroy(this.gameObject);
         }
     }
