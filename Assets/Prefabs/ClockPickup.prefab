@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3440920753777234747}
   - component: {fileID: 127856477606576690}
   - component: {fileID: 5929858828306491094}
+  - component: {fileID: 931990428384028860}
   m_Layer: 0
   m_Name: ClockPickup
   m_TagString: Untagged
@@ -108,3 +109,15 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &931990428384028860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2051182857752078004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 060e7f5915eb57e48b5152b9da958d71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
