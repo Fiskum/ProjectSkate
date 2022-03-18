@@ -325,6 +325,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1016721290 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6501546400882548691, guid: 1c66d71fd1ad41e448ceeb6793382b70, type: 3}
+  m_PrefabInstance: {fileID: 6501546400696244794}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1147126780
 GameObject:
   m_ObjectHideFlags: 0
@@ -486,6 +491,7 @@ GameObject:
   - component: {fileID: 1552403349}
   - component: {fileID: 1552403348}
   - component: {fileID: 1552403347}
+  - component: {fileID: 1552403350}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -558,6 +564,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1552403350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1552403346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45b11bd0c1f607840b71007028d23506, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Building: {fileID: 1016721290}
+  MinX: -10
+  MaxX: -20
+  MinY: 0
+  MaxY: 12
+  TimeBtwSpawn: 5
 --- !u!1 &1836562590
 GameObject:
   m_ObjectHideFlags: 0
@@ -865,7 +889,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1913259093676829104, guid: a8b9775a9aafb9449a4d8777c8986fc4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.04
+      value: 5.89
       objectReference: {fileID: 0}
     - target: {fileID: 1913259093676829104, guid: a8b9775a9aafb9449a4d8777c8986fc4, type: 3}
       propertyPath: m_LocalPosition.y
