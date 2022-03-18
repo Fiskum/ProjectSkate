@@ -445,7 +445,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2490563687650142041}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ShopCharacters, Assembly-CSharp
         m_MethodName: OnClick_ShopParticels
         m_Mode: 1
@@ -4556,7 +4556,6 @@ GameObject:
   - component: {fileID: 2490563686297382145}
   - component: {fileID: 2490563686297382144}
   - component: {fileID: 2490563686297382159}
-  - component: {fileID: 2490563686297382146}
   m_Layer: 0
   m_Name: LeaderBoards1
   m_TagString: Untagged
@@ -4657,18 +4656,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &2490563686297382146
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2490563686297382157}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a6569f95a3f60b478c952a4971c82c3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2490563686330070254
 GameObject:
   m_ObjectHideFlags: 0
@@ -5294,7 +5281,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2490563686539915045}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: HTP, Assembly-CSharp
         m_MethodName: OnClick_Back
         m_Mode: 1
@@ -5318,7 +5305,6 @@ GameObject:
   - component: {fileID: 2490563686353190459}
   - component: {fileID: 2490563686353190458}
   - component: {fileID: 2490563686353190457}
-  - component: {fileID: 2490563686353190460}
   m_Layer: 0
   m_Name: ChapterSelect
   m_TagString: Untagged
@@ -5411,18 +5397,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &2490563686353190460
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2490563686353190439}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb6b390805228fa478b528d2977dff91, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2490563686366636558
 GameObject:
   m_ObjectHideFlags: 0
@@ -5546,7 +5520,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2490563686353190460}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ChapterSelect, Assembly-CSharp
         m_MethodName: OnClick_LevelSelect
         m_Mode: 1
@@ -6783,7 +6757,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2490563687650142041}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ShopCharacters, Assembly-CSharp
         m_MethodName: OnClick_Ingame_Purchasess
         m_Mode: 1
@@ -7048,7 +7022,6 @@ GameObject:
   - component: {fileID: 2490563686539915044}
   - component: {fileID: 2490563686539915043}
   - component: {fileID: 2490563686539915042}
-  - component: {fileID: 2490563686539915045}
   m_Layer: 0
   m_Name: HTP
   m_TagString: Untagged
@@ -7139,18 +7112,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &2490563686539915045
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2490563686539915040}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d10873bafaea11e49a27bb288c6622bb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2490563686540217772
 GameObject:
   m_ObjectHideFlags: 0
@@ -8899,7 +8860,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2490563686353190460}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ChapterSelect, Assembly-CSharp
         m_MethodName: OnClick_Back
         m_Mode: 1
@@ -9785,7 +9746,6 @@ GameObject:
   - component: {fileID: 2490563686823173179}
   - component: {fileID: 2490563686823173178}
   - component: {fileID: 2490563686823173177}
-  - component: {fileID: 2490563686823173180}
   m_Layer: 0
   m_Name: ShopParticels
   m_TagString: Untagged
@@ -9887,18 +9847,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &2490563686823173180
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2490563686823173159}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 515c2a720830867498dceb814f232f13, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2490563686825940792
 GameObject:
   m_ObjectHideFlags: 0
@@ -10608,7 +10556,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2490563686823173180}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ShopParticels, Assembly-CSharp
         m_MethodName: OnClick_Back
         m_Mode: 1
@@ -11168,7 +11116,6 @@ GameObject:
   - component: {fileID: 2490563686998601333}
   - component: {fileID: 2490563686998601332}
   - component: {fileID: 2490563686998601331}
-  - component: {fileID: 2490563686998601334}
   m_Layer: 0
   m_Name: IngamePurchases
   m_TagString: Untagged
@@ -11260,18 +11207,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &2490563686998601334
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2490563686998601329}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7db02acf0afd9b94f950944750428413, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2490563687009992271
 GameObject:
   m_ObjectHideFlags: 0
@@ -12390,7 +12325,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2490563687650142041}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ShopCharacters, Assembly-CSharp
         m_MethodName: OnClick_Back
         m_Mode: 1
@@ -13197,7 +13132,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2490563686297382146}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: LeaderBoard, Assembly-CSharp
         m_MethodName: OnClick_Back
         m_Mode: 1
@@ -13329,7 +13264,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2490563686998601334}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: IngamePurchases, Assembly-CSharp
         m_MethodName: OnClick_Back
         m_Mode: 1
@@ -13581,7 +13516,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2490563686823173180}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ShopParticels, Assembly-CSharp
         m_MethodName: OnClick_Ingame_Purchasess
         m_Mode: 1
@@ -15207,7 +15142,6 @@ GameObject:
   - component: {fileID: 2490563687650142040}
   - component: {fileID: 2490563687650142023}
   - component: {fileID: 2490563687650142022}
-  - component: {fileID: 2490563687650142041}
   m_Layer: 0
   m_Name: ShopCharacters
   m_TagString: Untagged
@@ -15309,18 +15243,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &2490563687650142041
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2490563687650142020}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e1d2b1c9e2788a4aa174d5f45e68c1a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2490563687667200390
 GameObject:
   m_ObjectHideFlags: 0
@@ -16213,7 +16135,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2490563686823173180}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ShopParticels, Assembly-CSharp
         m_MethodName: OnClick_ShopCharacters
         m_Mode: 1
@@ -16657,7 +16579,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2490563687802937389}
-  - component: {fileID: 2490563687802937390}
   m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
@@ -16695,18 +16616,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2490563687802937390
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2490563687802937388}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c5440aaa021b62647ba923cf8a3ca9d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2490563687812184448
 GameObject:
   m_ObjectHideFlags: 0

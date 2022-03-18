@@ -13,7 +13,11 @@ public class ClockPickup : MonoBehaviour
 
     private void Update()
     {
-        if(transform.position.x < screenBounds.x * 2)
+        if(Manager_Game.GetManager().onRestart == true)
+        {
+            Destroy(this.gameObject);
+        }
+        if(transform.position.x < screenBounds.x -10)
         {
             Destroy(this.gameObject);
         }

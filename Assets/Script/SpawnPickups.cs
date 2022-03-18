@@ -5,23 +5,31 @@ using UnityEngine;
 public class SpawnPickups : MonoBehaviour
 {
     public GameObject clockPickupPrefab;
-    public float respawnTime = 5.0f;
+    public float respawnTime = 5f;
     private Vector2 screenBounds;
     public Manager_Game manager_Game;
 
+    [Header("PickupSpawnRange")]
+    public float top = 10;
+    public float bottom = -10;
+
     private void Start()
     {
-        screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
         StartCoroutine(pickupWave());
+    }
+
+    private void Update()
+    {
+        screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
     }
     private void SpawnPickup()
     {
         GameObject a = Instantiate(clockPickupPrefab) as GameObject;
-        a.transform.position = new Vector2(screenBounds.x * -2, Random.Range(-screenBounds.y + 3, screenBounds.y - 3));
+        a.transform.position = new Vector2(Camera.main.transform.position.x + screenBounds.x + 10, Random.Range(top, bottom));
     }
     IEnumerator pickupWave()
     {
-        while (manager_Game.timer_unPause < 0)
+        while (true)
         {
             yield return new WaitForSeconds(respawnTime);
             SpawnPickup();
