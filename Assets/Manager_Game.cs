@@ -13,6 +13,7 @@ public class Manager_Game : MonoBehaviour
 
     public GameStates gameState = GameStates.Pause;
     public bool isPaused { get { return gameState == GameStates.Pause; } }
+    public bool onRestart { get { return timer == timerStartingValue; } }
 
     [Header("Values")]
     public float timerStartingValue = 30;
@@ -91,7 +92,7 @@ public class Manager_Game : MonoBehaviour
 
     void InGame()
     {
-        timer -= Time.deltaTime;
+        timer -= Time.deltaTime; // OnResiart depends on the timer ticking down first.
 
         Vector2 playerPosition = playerTransform.position;
 
