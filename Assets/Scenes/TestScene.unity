@@ -870,9 +870,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1147126781}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 12
-  m_WholeNumbers: 0
-  m_Value: 0
+  m_MaxValue: 20
+  m_WholeNumbers: 1
+  m_Value: 10
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -931,6 +931,10 @@ PrefabInstance:
       propertyPath: Adjuster
       value: 
       objectReference: {fileID: 2137858966}
+    - target: {fileID: 1913259093676829108, guid: a8b9775a9aafb9449a4d8777c8986fc4, type: 3}
+      propertyPath: sliderValue
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1913259093676829109, guid: a8b9775a9aafb9449a4d8777c8986fc4, type: 3}
       propertyPath: m_Name
       value: BuildingNegativeY
@@ -952,6 +956,10 @@ PrefabInstance:
       propertyPath: Adjuster
       value: 
       objectReference: {fileID: 2137858966}
+    - target: {fileID: 6501546400882548692, guid: 1c66d71fd1ad41e448ceeb6793382b70, type: 3}
+      propertyPath: sliderValue
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6501546400882548695, guid: 1c66d71fd1ad41e448ceeb6793382b70, type: 3}
       propertyPath: m_RootOrder
       value: 2
