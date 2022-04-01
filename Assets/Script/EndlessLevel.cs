@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class EndlessLevel : MonoBehaviour
 {
-    public GameObject Building;
     public float MinX;
     public float MaxX;
     public float MinY;
     public float MaxY;
     public float TimeBtwSpawn;
     private float SpawnTime;
+    public GameObject[] Buildarray;
     void Update()
     {
         if(Time.time > SpawnTime)
@@ -23,7 +23,8 @@ public class EndlessLevel : MonoBehaviour
     {
         float randomX = Random.Range(MinX, MaxX);
         float randomY = Random.Range(MinY, MaxY);
+        int Buildspawn = Random.Range(0, Buildarray.Length);
 
-        Instantiate(Building, transform.position + new Vector3(randomX, randomY, 0), transform.rotation);
+        Instantiate(Buildarray[Buildspawn], transform.position + new Vector3(randomX, randomY, 0), transform.rotation);
     }
 }
