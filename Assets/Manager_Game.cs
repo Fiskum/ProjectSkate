@@ -26,6 +26,7 @@ public class Manager_Game : MonoBehaviour
     public Transform playerTransform;
     private Rigidbody2D playerRigid;
     private Vector3 playerDefaultPosition;
+    public Manager_Leaderboard leaderBoard;
 
     [Header("Assignable UI Elements")]
     public Text UI_Timer;
@@ -144,6 +145,8 @@ public class Manager_Game : MonoBehaviour
             UI_VictoryScreen_Return.onClick.AddListener(RestartApp);
         }
 
+        leaderBoard.AddScore(timerStartingValue - timer, SystemInfo.deviceName);
+
         Restart();
     }
 
@@ -212,7 +215,7 @@ public class Manager_Game : MonoBehaviour
 
 				#region tools
 
-    static string TimerToClock(float currentTime)
+    public static string TimerToClock(float currentTime)
     {
         float minutes = Mathf.Floor(currentTime / 60);
         float seconds = Mathf.Floor(currentTime) - minutes * 60;
