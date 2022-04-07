@@ -11,7 +11,16 @@ public class EndlessLevel : MonoBehaviour
     public float SpawnTime;
     public ArrayList buildings;
     public GameObject[] Buildarray;
-    public GameObject Player;
+
+    void Start()
+    {
+        StartCoroutine(waitabit());
+    }
+    IEnumerator waitabit()
+    {
+        yield return new WaitForSeconds(5);
+        FixedUpdate();
+    }
     void FixedUpdate()
     {
         if (Time.time > SpawnTime)

@@ -5,7 +5,7 @@ using UnityEngine;
 public class movingendlessly : MonoBehaviour
 {
     public float x;
-    private void Update()
+    void Update()
     {
         GetComponent<Rigidbody2D>().velocity = new Vector2(x, 0);
     }
