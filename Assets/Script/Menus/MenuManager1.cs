@@ -19,6 +19,7 @@ public class MenuManager1 : MonoBehaviour
     public void GoToMainMenu()
     {
         UI_MainMenu.SetActive(true);
+        Manager_Game.GetManager().PauseGame();
     }
 
     public void GoToChapterSelect()
@@ -33,6 +34,7 @@ public class MenuManager1 : MonoBehaviour
     public void GoToShopCharacters()
     {
         UI_ShopCharacters.SetActive(true);
+        Manager_Game.GetManager().PauseGame();
     }
 
     public void GoToShopParticels()
@@ -43,16 +45,19 @@ public class MenuManager1 : MonoBehaviour
     public void GoToIngamePurchases()
     {
         UI_IngamePurchases.SetActive(true);
+        Manager_Game.GetManager().PauseGame();
     }
 
     public void GoToLeaderBoard()
     {
         UI_LeaderBoard.SetActive(true);
+        Manager_Game.GetManager().PauseGame();
     }
 
     public void GoToOptions()
     {
         UI_Options.SetActive(true);
+        Manager_Game.GetManager().PauseGame();
     }  
     
     public void GoToIngameOptions()

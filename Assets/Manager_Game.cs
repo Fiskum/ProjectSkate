@@ -27,6 +27,7 @@ public class Manager_Game : MonoBehaviour
     private Rigidbody2D playerRigid;
     private Vector3 playerDefaultPosition;
     public Manager_Leaderboard leaderBoard;
+    public GameObject Canvas_Main;
 
     [Header("Assignable UI Elements")]
     public Text UI_Timer;
@@ -72,6 +73,7 @@ public class Manager_Game : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if (gameState == GameStates.Pause)
         {
             if (timer_unPause != -1)
@@ -89,6 +91,9 @@ public class Manager_Game : MonoBehaviour
 
 
         UpdateUI();
+
+
+  
     }
 
     void InGame()
@@ -236,6 +241,7 @@ public class Manager_Game : MonoBehaviour
     {
         return GameObject.Find("_ScriptManager").GetComponent<Manager_Game>();
     }
+
 
 				#endregion
 }
