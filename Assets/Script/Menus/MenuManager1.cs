@@ -16,10 +16,14 @@ public class MenuManager1 : MonoBehaviour
     public GameObject UI_IngameOptions;
     public GameObject UI_HTP;
 
+    [Header("Others")]
+    public AudioSource music;
+
     public void GoToMainMenu()
     {
         UI_MainMenu.SetActive(true);
         Manager_Game.GetManager().PauseGame();
+        music.Pause();
     }
 
     public void GoToChapterSelect()
@@ -35,6 +39,7 @@ public class MenuManager1 : MonoBehaviour
     {
         UI_ShopCharacters.SetActive(true);
         Manager_Game.GetManager().PauseGame();
+        music.Pause();
     }
 
     public void GoToShopParticels()
@@ -72,6 +77,7 @@ public class MenuManager1 : MonoBehaviour
 
     public void StartLevel()
     {
+        music.Play();
         Manager_Game.GetManager().UnPauseGame();
     }
 
