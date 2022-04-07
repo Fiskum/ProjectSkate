@@ -28,7 +28,7 @@ public class EndlessLevel : MonoBehaviour
         int Buildspawn = Random.Range(0, Buildarray.Length);
    
         Instantiate(Buildarray[Buildspawn], transform.position + new Vector3(0, randomY, Zvalue), transform.rotation);
-        GameObject.Find("Slider").GetComponent<BuildingSlider>();
+        //GameObject.Find("Slider").GetComponent<BuildingSlider>();
 
     }
 }
