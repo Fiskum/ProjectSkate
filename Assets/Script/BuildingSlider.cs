@@ -7,11 +7,12 @@ public class BuildingSlider : MonoBehaviour
 {
     public Slider Adjuster;
     public float sliderValue;
+    public int modifier = 1;
     void FixedUpdate()
     {
-        sliderValue = Adjuster.value -21;
+        sliderValue = Adjuster.value;
         Vector3 temp = transform.position;
-        temp.y = sliderValue;
+        temp.y = sliderValue * modifier;
         transform.localPosition = temp;
     }
 }

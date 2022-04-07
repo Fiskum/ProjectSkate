@@ -9,7 +9,7 @@ public class BuildingSliderNegative : MonoBehaviour
     public float sliderValue;
     void FixedUpdate()
     {
-        sliderValue = Adjuster.value -10;
+        sliderValue = Adjuster.value;
         Vector3 temp = transform.position;
         temp.y = -sliderValue;
         transform.localPosition = temp;

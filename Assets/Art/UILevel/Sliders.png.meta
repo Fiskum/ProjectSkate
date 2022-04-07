@@ -1,10 +1,16 @@
 fileFormatVersion: 2
-guid: eb95621078a82a146b496f2b25535c19
+guid: 91d22fbf8e030f64ba3939642520e22c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3886909736518253268
-    second: ButtonSlider_0
+      213: -4521863094159496220
+    second: Sliders_0
+  - first:
+      213: -3975550601279866913
+    second: Sliders_1
+  - first:
+      213: 8761819160444630061
+    second: Sliders_2
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -50,11 +56,11 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 10
-  spriteBorder: {x: 296, y: 80, z: 4, w: 80}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
-  spriteTessellationDetail: 0
+  spriteTessellationDetail: -1
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
@@ -106,10 +112,31 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ButtonSlider_0
+      name: Sliders_0
       rect:
         serializedVersion: 2
-        x: 296
+        x: 4
+        y: 7
+        width: 20
+        height: 166
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ebaca5497d1f31c0800000000000000
+      internalID: -4521863094159496220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sliders_1
+      rect:
+        serializedVersion: 2
+        x: 150
         y: 80
         width: 20
         height: 20
@@ -120,20 +147,37 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4da7d27cfc311f530800000000000000
-      internalID: 3886909736518253268
+      spriteID: fd77f10aac104d8c0800000000000000
+      internalID: -3975550601279866913
       vertices: []
       indices: 
       edges: []
       weights: []
-    outline:
-    - - {x: 136, y: -10}
-      - {x: 136, y: 10}
-      - {x: 156, y: 10}
-      - {x: 156, y: -10}
+    - serializedVersion: 2
+      name: Sliders_2
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 7
+        width: 20
+        height: 166
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d247384ba1c389970800000000000000
+      internalID: 8761819160444630061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: a3b8dc69f2d38b542aa3761308e3a514
     internalID: 0
     vertices: []
     indices: 
