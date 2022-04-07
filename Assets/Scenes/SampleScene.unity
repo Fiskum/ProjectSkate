@@ -909,9 +909,9 @@ RectTransform:
   m_Father: {fileID: 1030279058}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 290.3, y: 163}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -29.700012, y: -17}
   m_SizeDelta: {x: 55, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &622873291
@@ -8109,7 +8109,7 @@ PrefabInstance:
       objectReference: {fileID: 1765535813}
     - target: {fileID: 2490563686775116741, guid: 35f102a03a4f3d44fa7e35c58e8efedd, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2490563686790545053, guid: 35f102a03a4f3d44fa7e35c58e8efedd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
