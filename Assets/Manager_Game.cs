@@ -136,6 +136,7 @@ public class Manager_Game : MonoBehaviour
             UI_PauseScreen_Return.onClick.AddListener(RestartApp);
         }
 
+        leaderBoard.AddScore(timerStartingValue - timer, SystemInfo.deviceName);
         Restart();
     }
 
