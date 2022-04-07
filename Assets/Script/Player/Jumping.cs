@@ -11,7 +11,11 @@ public class Jumping : MonoBehaviour
 
     public void Jump()
     {
-        rb.AddForce(Vector2.up * jumpAmount, ForceMode2D.Impulse);
+        if (rb.velocity.y == 0)
+        {
+            rb.AddForce(Vector2.up * jumpAmount, ForceMode2D.Impulse);
+        }
+       
     }
     void Update()
     {
