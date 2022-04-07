@@ -8,5 +8,7 @@ public class movingendlessly : MonoBehaviour
     void Update()
     {
         GetComponent<Rigidbody2D>().velocity = new Vector2(x, 0);
+
+    
     }
 }
