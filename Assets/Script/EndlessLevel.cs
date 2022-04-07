@@ -8,6 +8,7 @@ public class EndlessLevel : MonoBehaviour
     public float MaxX;
     public float MinY;
     public float MaxY;
+    public float Zvalue;
     public float TimeBtwSpawn;
     private float SpawnTime;
     public GameObject[] Buildarray;
@@ -26,7 +27,7 @@ public class EndlessLevel : MonoBehaviour
         float randomY = Random.Range(MinY, MaxY);
         int Buildspawn = Random.Range(0, Buildarray.Length);
    
-        Instantiate(Buildarray[Buildspawn], transform.position + new Vector3(randomX, randomY, 0), transform.rotation);
+        Instantiate(Buildarray[Buildspawn], transform.position + new Vector3(randomX, randomY, Zvalue), transform.rotation);
 
         GameObject.Find("Slider").GetComponent<BuildingSliderNegative>();
         GameObject.Find("Slider").GetComponent<BuildingSlider>();
