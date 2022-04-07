@@ -4,32 +4,29 @@ using UnityEngine;
 
 public class EndlessLevel : MonoBehaviour
 {
-    public float MinX;
-    public float MaxX;
     public float MinY;
     public float MaxY;
     public float Zvalue;
     public float TimeBtwSpawn;
-    private float SpawnTime;
+    public float SpawnTime;
+    public ArrayList buildings;
     public GameObject[] Buildarray;
-
-    void Update()
+    public GameObject Player;
+    void FixedUpdate()
     {
-        if(Time.time > SpawnTime)
+        if (Time.time > SpawnTime)
         {
-            Spawn();
             SpawnTime = Time.time + TimeBtwSpawn;
+            Spawn();
         }
     }
     void Spawn ()
     {
-        float randomX = Random.Range(MinX, MaxX);
+      
         float randomY = Random.Range(MinY, MaxY);
         int Buildspawn = Random.Range(0, Buildarray.Length);
    
-        Instantiate(Buildarray[Buildspawn], transform.position + new Vector3(randomX, randomY, Zvalue), transform.rotation);
-
-        GameObject.Find("Slider").GetComponent<BuildingSliderNegative>();
+        Instantiate(Buildarray[Buildspawn], transform.position + new Vector3(0, randomY, Zvalue), transform.rotation);
         GameObject.Find("Slider").GetComponent<BuildingSlider>();
 
     }

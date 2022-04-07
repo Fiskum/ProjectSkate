@@ -752,25 +752,13 @@ MonoBehaviour:
   m_FillRect: {fileID: 931348761}
   m_HandleRect: {fileID: 669794568}
   m_Direction: 0
-  m_MinValue: 10
-  m_MaxValue: 30
-  m_WholeNumbers: 1
-  m_Value: 20
+  m_MinValue: 0
+  m_MaxValue: 12
+  m_WholeNumbers: 0
+  m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1564586159}
-        m_TargetAssemblyTypeName: Jumping, Assembly-CSharp
-        m_MethodName: AdjustSpeed
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!1 &579338231 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2490563686179608116, guid: 35f102a03a4f3d44fa7e35c58e8efedd, type: 3}
@@ -1250,11 +1238,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 793274324}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ef48f37a13ddc04ea3ddf8189cb6cf8, type: 3}
+  m_Script: {fileID: 11500000, guid: 86172131f636de34498d9f6b8f5c0762, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Adjuster: {fileID: 0}
+  Adjuster: {fileID: 1544277755}
   sliderValue: 0
+  modifier: 1
 --- !u!61 &793274326
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1374,11 +1363,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 838789223}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ef48f37a13ddc04ea3ddf8189cb6cf8, type: 3}
+  m_Script: {fileID: 11500000, guid: 86172131f636de34498d9f6b8f5c0762, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Adjuster: {fileID: 0}
+  Adjuster: {fileID: 1544277755}
   sliderValue: 0
+  modifier: 1
 --- !u!61 &838789225
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2117,9 +2107,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86172131f636de34498d9f6b8f5c0762, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Adjuster: {fileID: 0}
+  Adjuster: {fileID: 565460077}
   sliderValue: 0
-  modifier: 1
+  modifier: -1
 --- !u!61 &1423567491
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2269,11 +2259,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1431978768}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ef48f37a13ddc04ea3ddf8189cb6cf8, type: 3}
+  m_Script: {fileID: 11500000, guid: 86172131f636de34498d9f6b8f5c0762, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Adjuster: {fileID: 0}
+  Adjuster: {fileID: 1544277755}
   sliderValue: 0
+  modifier: 1
 --- !u!61 &1431978770
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2600,25 +2591,13 @@ MonoBehaviour:
   m_FillRect: {fileID: 1036704802}
   m_HandleRect: {fileID: 75439736}
   m_Direction: 0
-  m_MinValue: 10
-  m_MaxValue: 30
-  m_WholeNumbers: 1
-  m_Value: 20
+  m_MinValue: 0
+  m_MaxValue: 12
+  m_WholeNumbers: 0
+  m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1564586159}
-        m_TargetAssemblyTypeName: Jumping, Assembly-CSharp
-        m_MethodName: AdjustSpeed
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!1 &1551908864
 GameObject:
   m_ObjectHideFlags: 0
@@ -7456,7 +7435,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f6837649ddda99469a214fb0e3e93ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  speed: 6
   rb: {fileID: 1564586160}
   jumpAmount: 25
   gravityScale: 7
@@ -8162,9 +8141,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86172131f636de34498d9f6b8f5c0762, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Adjuster: {fileID: 0}
+  Adjuster: {fileID: 565460077}
   sliderValue: 0
-  modifier: 1
+  modifier: -1
 --- !u!61 &1831823391
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8614,12 +8593,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45b11bd0c1f607840b71007028d23506, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MinX: 0
-  MaxX: 0
-  MinY: -5
-  MaxY: 5
+  MinY: 0
+  MaxY: 0
   Zvalue: 0
   TimeBtwSpawn: 3
+  SpawnTime: 0
   Buildarray:
   - {fileID: 1705918482}
   - {fileID: 1730432679}
@@ -8630,6 +8608,7 @@ MonoBehaviour:
   - {fileID: 2136158301}
   - {fileID: 1423567489}
   - {fileID: 1831823389}
+  Player: {fileID: 0}
 --- !u!4 &1985107359
 Transform:
   m_ObjectHideFlags: 0
@@ -8638,7 +8617,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1985107357}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 81.14, y: -9.94, z: -10.049782}
+  m_LocalPosition: {x: 83.3, y: -14.34, z: 0}
   m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children: []
   m_Father: {fileID: 0}
@@ -8982,9 +8961,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86172131f636de34498d9f6b8f5c0762, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Adjuster: {fileID: 0}
+  Adjuster: {fileID: 565460077}
   sliderValue: 0
-  modifier: 1
+  modifier: -1
 --- !u!61 &2136158303
 BoxCollider2D:
   m_ObjectHideFlags: 0
