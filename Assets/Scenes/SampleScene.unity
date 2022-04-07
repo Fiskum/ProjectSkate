@@ -8119,9 +8119,41 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 889704821}
     - target: {fileID: 2490563686332279984, guid: 35f102a03a4f3d44fa7e35c58e8efedd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2490563686332279984, guid: 35f102a03a4f3d44fa7e35c58e8efedd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2490563686332279984, guid: 35f102a03a4f3d44fa7e35c58e8efedd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1765535813}
+    - target: {fileID: 2490563686332279984, guid: 35f102a03a4f3d44fa7e35c58e8efedd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 1985107357}
+    - target: {fileID: 2490563686332279984, guid: 35f102a03a4f3d44fa7e35c58e8efedd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2490563686332279984, guid: 35f102a03a4f3d44fa7e35c58e8efedd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 2490563686332279984, guid: 35f102a03a4f3d44fa7e35c58e8efedd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2490563686332279984, guid: 35f102a03a4f3d44fa7e35c58e8efedd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2490563686332279984, guid: 35f102a03a4f3d44fa7e35c58e8efedd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 2490563686350236325, guid: 35f102a03a4f3d44fa7e35c58e8efedd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -9006,13 +9038,14 @@ GameObject:
   - component: {fileID: 1985107359}
   - component: {fileID: 1985107358}
   - component: {fileID: 1985107361}
+  - component: {fileID: 1985107360}
   m_Layer: 0
   m_Name: Spawner
   m_TagString: Untagged
   m_Icon: {fileID: 2488908585195742037, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1985107358
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9025,10 +9058,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45b11bd0c1f607840b71007028d23506, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MinY: 0
-  MaxY: 0
+  MinY: -3
+  MaxY: 3
   Zvalue: 0
-  TimeBtwSpawn: 2
+  TimeBtwSpawn: 1
   SpawnTime: 0
   Buildarray:
   - {fileID: 1705918482}
@@ -9048,12 +9081,25 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1985107357}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 22, y: -10, z: 10}
-  m_LocalScale: {x: 10, y: 10, z: 10}
+  m_LocalPosition: {x: 21.9, y: -1.1599998, z: 10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 519420032}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1985107360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1985107357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b988da9f2bfcb9a42912b5511d35ce7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  x: 12
 --- !u!50 &1985107361
 Rigidbody2D:
   serializedVersion: 4
@@ -9074,7 +9120,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 7
+  m_Constraints: 6
 --- !u!1 &2012295636
 GameObject:
   m_ObjectHideFlags: 0
