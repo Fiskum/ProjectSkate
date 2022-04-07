@@ -21,11 +21,11 @@ public class Manager_Leaderboard : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
         if (PlayerPrefs.GetInt("FirstBoot") != 1)
             FirstTimeBoot();
-        else
-            LoadScores();
 
+        LoadScores();
         UpdateUIScore();
     }
 
@@ -59,7 +59,17 @@ public class Manager_Leaderboard : MonoBehaviour
     public void AddScore(float newTime, string newName)
     {
         if (newTime > highScores[9].time) // if it's slower than the slowest high score, skip it.
-            return; 
+            return;
+
+        if (newName.Length < 1)
+            newName = "My Personal Score";
+        else
+        {
+            newName = newName.ToLower();
+            newName = char.ToUpper(newName[0]) + newName.Substring(1);
+        }
+
+     
 
         for (int i = 0; i < 10; i++)
         {
@@ -94,7 +104,7 @@ public class Manager_Leaderboard : MonoBehaviour
 
         for (int i = 0; i < 10; i++)
         {
-            string name = highScores[i].name.Substring(0, Mathf.Min(highScores[i].name.Length, 16));
+            string name = highScores[i].name.Substring(0, Mathf.Min(highScores[i].name.Length, 18));
 
             ScoreName.text += (i < 9 ? "  " : "") + (i + 1) + ".\t" + name + "\n";
             ScoreTime.text += highScores[i].clock + "\n";
