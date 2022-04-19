@@ -22,7 +22,7 @@ public class Manager_Leaderboard : MonoBehaviour
     void Start()
     {
 
-        if (PlayerPrefs.GetInt("FirstBoot") != 1)
+      if (PlayerPrefs.GetInt("FirstBoot") != 2)
             FirstTimeBoot();
 
         LoadScores();
@@ -58,7 +58,7 @@ public class Manager_Leaderboard : MonoBehaviour
 
     public void AddScore(float newTime, string newName)
     {
-        if (newTime > highScores[9].time) // if it's slower than the slowest high score, skip it.
+        if (newTime < highScores[9].time) // if the new time is less than the slowest time, return.
             return;
 
         if (newName.Length < 1)
@@ -73,7 +73,7 @@ public class Manager_Leaderboard : MonoBehaviour
 
         for (int i = 0; i < 10; i++)
         {
-            if (newTime < highScores[i].time)
+            if (newTime > highScores[i].time)
             {
                 Score[] newHighScore = new Score[10];
                 System.Array.Copy(highScores, newHighScore, 10);
@@ -100,7 +100,8 @@ public class Manager_Leaderboard : MonoBehaviour
 
     void UpdateUIScore()
     {
-        ScoreName.text = ScoreTime.text = "";
+        ScoreName.text = "High Scores: \n";
+        ScoreTime.text = "Time: \t\t\n";
 
         for (int i = 0; i < 10; i++)
         {
@@ -115,6 +116,8 @@ public class Manager_Leaderboard : MonoBehaviour
     {
         Score[] defaultScores = new Score[10];
 
+        float defaultTime = 81.43235f;
+
         defaultScores[0].name = "Jørgen Dalby";
         defaultScores[1].name = "Hanne Thoresen";
         defaultScores[2].name = "Arild Pettersen";
@@ -126,40 +129,16 @@ public class Manager_Leaderboard : MonoBehaviour
         defaultScores[8].name = "Bjørn Meyer";
         defaultScores[9].name = "Stine Vedvik";
 
-        defaultScores[0].time = 23;
-        defaultScores[0].clock = Manager_Game.TimerToClock(defaultScores[0].time);
-
-        defaultScores[1].time = 24;
-        defaultScores[1].clock = Manager_Game.TimerToClock(defaultScores[1].time);
-
-        defaultScores[2].time = 25;
-        defaultScores[2].clock = Manager_Game.TimerToClock(defaultScores[2].time);
-
-        defaultScores[3].time = 26;
-        defaultScores[3].clock = Manager_Game.TimerToClock(defaultScores[3].time);
-
-        defaultScores[4].time = 27;
-        defaultScores[4].clock = Manager_Game.TimerToClock(defaultScores[4].time);
-
-        defaultScores[5].time = 28;
-        defaultScores[5].clock = Manager_Game.TimerToClock(defaultScores[5].time);
-
-        defaultScores[6].time = 29;
-        defaultScores[6].clock = Manager_Game.TimerToClock(defaultScores[6].time);
-
-        defaultScores[7].time = 30;
-        defaultScores[7].clock = Manager_Game.TimerToClock(defaultScores[7].time);
-
-        defaultScores[8].time = 31;
-        defaultScores[8].clock = Manager_Game.TimerToClock(defaultScores[8].time);
-
-        defaultScores[9].time = 32;
-        defaultScores[9].clock = Manager_Game.TimerToClock(defaultScores[9].time);
+        for (int i = 0; i < 10; i++)
+        {
+            defaultScores[i].time = defaultTime - (i * 4.712345f); // A seemingly random number (but not really)
+            defaultScores[i].clock = Manager_Game.TimerToClock(defaultScores[i].time);
+        }
 
         highScores = defaultScores;
         SaveScores();
 
         Debug.Log("Performed a first time boot of the High Score.");
-        PlayerPrefs.SetInt("FirstBoot", 1);
+        PlayerPrefs.SetInt("FirstBoot", 2); // Second itteration of the highscore system.
     }
 }

@@ -230,10 +230,12 @@ public class Manager_Game : MonoBehaviour
 
         string clockTime = "";
 
-        if (minutes < 1)
-            clockTime = (seconds < 10 ? "0" : "") + seconds + (milliseconds < 10 ? ":0" : ":") + milliseconds + (microseconds < 10 ? ":0" : ":") + microseconds;
-        else
-            clockTime = (minutes < 10 ? "0" : "") + minutes + (seconds < 10 ? ":0" : ":") + seconds + (milliseconds < 10 ? ":0" : ":") + milliseconds;
+       // if (minutes < 1) // If we are only working with seconds
+       //     clockTime = (seconds < 10 ? "0" : "") + seconds + (milliseconds < 10 ? ":0" : ":") + milliseconds + (microseconds < 10 ? ".0" : ".") + microseconds;
+       // else
+       //     clockTime = (minutes < 10 ? "0" : "") + minutes + (seconds < 10 ? ":0" : ":") + seconds + (milliseconds < 10 ? ".0" : ".") + milliseconds;
+
+        clockTime = (minutes < 10 ? "0" : "") + minutes + (seconds < 10 ? ":0" : ":") + seconds + (milliseconds < 10 ? ".0" : ".") + milliseconds;
 
         return clockTime;
     }
