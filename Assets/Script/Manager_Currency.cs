@@ -4,12 +4,30 @@ using UnityEngine;
 
 public class Manager_Currency : MonoBehaviour
 {
+    [System.Serializable]
+    public struct Item
+    {
+        public string name;
+        public int price;
+        public bool alreadyPurchased;
+        public Color colorModifer;
+
+    }
+
+
     Manager_Game GameManager;
 
     [Header("Currency Settings")]
     public int priceForSkin = 1000;
     public int priceForParticles = 250;
     public int minutesToEarnSkin = 60; // en time
+
+    [Header("Purchasable Items")]
+
+    public Item[] Items;
+
+    [Header("Variables")]
+    public SpriteRenderer playerRenderer;
 
     // Start is called before the first frame update
     void Start()
@@ -18,15 +36,20 @@ public class Manager_Currency : MonoBehaviour
 
         if (PlayerPrefs.GetInt("Currency_FirstBoot") != 1)
             FirstTimeBoot();
+
+        for (int i = 0; i < Items.Length; i++)
+        {
+            Item currentItem = Items[i];
+
+            currentItem.alreadyPurchased = PlayerPrefs.GetInt(currentItem.name) == -1;
+            if(!currentItem.alreadyPurchased)
+                PlayerPrefs.SetInt(currentItem.name, currentItem.price);
+        }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
 
-    }
-
-    public void RewardRun(float time)
+				#region Currency
+				public void RewardRun(float time)
     {
         float coinPerSecond = (float)priceForSkin / (minutesToEarnSkin * 60);
 
@@ -37,12 +60,12 @@ public class Manager_Currency : MonoBehaviour
         Debug.Log("Deposited '" + earnedCoins + "' coins to your account. \nYour current balance is '" + (currentCoins + earnedCoins) + "' coins.");
     }
 
-    public void MakePurchase(string itemID, int price)
+    public bool MakePurchase(string itemID)
     {
         if (!PlayerPrefs.HasKey(itemID))
         {
             Debug.Log("Error:\nThe item does not exist.");
-            return;
+            return false;
         }
 
         int currentCoins = PlayerPrefs.GetInt("Currency_Coin");
@@ -51,13 +74,13 @@ public class Manager_Currency : MonoBehaviour
         if (itemPrice == -1)
         {
             Debug.Log("Error:\nThe item has already been purchased.");
-            return;
+            return false;
         }
 
         if (itemPrice > currentCoins)
         {
             Debug.Log("The item is too expensive.");
-            return;
+            return false;
         }
         else
         {
@@ -66,13 +89,54 @@ public class Manager_Currency : MonoBehaviour
 
             Debug.Log("Purchase:\nYou have been charged '" + itemPrice + "' coins.");
         }
+
+        return true;
     }
 
     void FirstTimeBoot()
     {
         PlayerPrefs.SetInt("Currency_Coin", Mathf.RoundToInt(priceForSkin * 0.5f)); // Halveis til et skinn
 
+        for (int i = 0; i < Items.Length; i++)
+        {
+            Item currentItem = Items[i];
+            currentItem.alreadyPurchased = false;
+            PlayerPrefs.SetInt(currentItem.name, currentItem.price);
+        }
+
 
         PlayerPrefs.SetInt("Currency_FirstBoot", 1);
+    }
+
+    #endregion
+
+    public void SelectItem(string name)
+    {
+
+        bool isBuying = MakePurchase(name);
+
+        Item currentItem = new Item();
+
+        for (int i = 0; i < Items.Length; i++)
+        {
+            if (name == Items[i].name)
+            {
+                currentItem = Items[i];
+                print("foundItem");
+                break;
+            }
+        }
+
+
+        bool isUnlocked = PlayerPrefs.GetInt("name") == -0;
+
+        Debug.Log(PlayerPrefs.GetInt("name"));
+
+        if (isUnlocked)
+								{
+            print("Active");
+            playerRenderer.color = currentItem.colorModifer;
+								}
+
     }
 }
