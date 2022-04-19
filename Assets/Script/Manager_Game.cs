@@ -10,16 +10,17 @@ public class Manager_Game : MonoBehaviour
     {
         Playing, Pause, Countdown
     }
-
+    Manager_Currency currencyManager;
     public GameStates gameState = GameStates.Pause;
     public bool isPaused { get { return gameState == GameStates.Pause; } }
-    public bool onRestart { get { return timer == timerStartingValue; } }
+    public bool onRestart { get { return death_timer == death_timer_Start; } }
 
     [Header("Values")]
-    public float timerStartingValue = 30;
+
     public float timer;
+    public float death_timer;
+    public float death_timer_Start = 30;
     public float timer_unPause = 2f;
-    public float goal_x = 783.2f;
     public float death_y = -33.7f;
 
     [Header("Assignable Variables")]
@@ -63,6 +64,8 @@ public class Manager_Game : MonoBehaviour
         else
             Debug.LogError("ERROR: Please assign the player object to the 'playerTransform' variable.");
 
+        currencyManager = GetComponent<Manager_Currency>();
+
         Restart();
 
         PauseGame();
@@ -98,24 +101,20 @@ public class Manager_Game : MonoBehaviour
 
     void InGame()
     {
-        timer -= Time.deltaTime; // OnResiart depends on the timer ticking down first.
+        timer += Time.deltaTime; // OnResiart depends on the timer ticking down first.
+        death_timer -= Time.deltaTime;
 
         Vector2 playerPosition = playerTransform.position;
 
-        if (playerPosition.y < death_y || timer <= 0)
+        if (playerPosition.y < death_y || death_timer <= 0)
         {
-            OnLose();
+            OnRunConclusion();
 
-        }
-
-        if (playerPosition.x > goal_x)
-        {
-            OnVictory();
         }
     }
 
 
-    public void OnLose()
+    public void OnRunConclusion()
     {
         if (UI_PauseScreen != null)
         {
@@ -123,38 +122,22 @@ public class Manager_Game : MonoBehaviour
                 timer = 0; // This is to ensure the final time won't be a negative number.
 
             UI_PauseScreen.SetActive(true);
-            UI_PauseScreen_Time.text = TimerToClock(timerStartingValue - timer);
+            UI_PauseScreen_Time.text = TimerToClock(timer);
 
 
-            float totalDistance = goal_x + playerDefaultPosition.x;
-            float progress = playerTransform.position.x / totalDistance;
+            float totalDistance = -playerDefaultPosition.x + playerTransform.position.x;
 
-            UI_PauseScreen_Progress.value = progress;
-            UI_PauseScreen_Percentage.text = "" + Mathf.Floor(progress * 100) + "%";
+            UI_PauseScreen_Progress.value = totalDistance;
 
             UI_PauseScreen_Return.onClick.RemoveAllListeners();
             UI_PauseScreen_Return.onClick.AddListener(RestartApp);
         }
 
-        leaderBoard.AddScore(timerStartingValue - timer, SystemInfo.deviceName);
+        leaderBoard.AddScore(timer, SystemInfo.deviceName);
+        currencyManager.RewardRun(timer);
         Restart();
     }
 
-    public void OnVictory()
-    {
-        if (UI_VictoryScreen != null)
-        {
-            UI_VictoryScreen.SetActive(true);
-            UI_VictoryScreen_Time.text = TimerToClock(timerStartingValue - timer);
-
-            UI_VictoryScreen_Return.onClick.RemoveAllListeners();
-            UI_VictoryScreen_Return.onClick.AddListener(RestartApp);
-        }
-
-        leaderBoard.AddScore(timerStartingValue - timer, SystemInfo.deviceName);
-
-        Restart();
-    }
 
     public void PauseGame()
     {
@@ -183,7 +166,8 @@ public class Manager_Game : MonoBehaviour
     public void Restart()
     {
         playerTransform.position = playerDefaultPosition;
-        timer = timerStartingValue;
+        timer = 0;
+        death_timer = death_timer_Start;
 
         PauseGame();
         UnPauseGame();

@@ -911,7 +911,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -29.700012, y: -17}
+  m_AnchoredPosition: {x: -29.699951, y: -17}
   m_SizeDelta: {x: 55, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &622873291
@@ -1584,6 +1584,7 @@ GameObject:
   m_Component:
   - component: {fileID: 889704822}
   - component: {fileID: 889704821}
+  - component: {fileID: 889704823}
   m_Layer: 0
   m_Name: _ScriptManager
   m_TagString: Untagged
@@ -1604,10 +1605,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameState: 1
-  timerStartingValue: 30
   timer: 0
+  death_timer: 0
+  death_timer_Start: 30
   timer_unPause: 2
-  goal_x: 783.2
   death_y: -33.7
   playerTransform: {fileID: 1564586164}
   leaderBoard: {fileID: 1765535815}
@@ -1638,6 +1639,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &889704823
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 889704820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acb778d9cef291d4a8997f37201fcfcf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  priceForSkin: 1000
+  priceForParticles: 250
+  minutesToEarnSkin: 60
 --- !u!1 &916721863 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2490563685746850296, guid: 35f102a03a4f3d44fa7e35c58e8efedd, type: 3}

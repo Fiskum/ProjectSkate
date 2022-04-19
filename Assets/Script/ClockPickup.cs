@@ -28,7 +28,7 @@ public class ClockPickup : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            Manager_Game.GetManager().timer += timeAdded;
+            Manager_Game.GetManager().death_timer += timeAdded;
             Destroy(this.gameObject);
         }
     }
