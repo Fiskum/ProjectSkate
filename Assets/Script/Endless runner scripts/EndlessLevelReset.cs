@@ -5,13 +5,12 @@ using UnityEngine;
 public class EndlessLevelReset : MonoBehaviour
 {
     public Transform PlatformGenerator;
-    private Vector3 PlatformStartPoint;
+    private Vector2 PlatformStartPoint;
 
     private PlatformDestroyer[] platformList;
 
     public Manager_Game theManager;
 
-    private Vector2 playerStartPosition;
 
     void Start()
     {
