@@ -11,7 +11,7 @@ public class Jumping : MonoBehaviour
 
 
     public GameObject Player;
-    public EndlessLevelReset theReset;
+  //  public EndlessLevelReset theReset;
     public void Jump()
     {
         if (rb.velocity.y == 0)
@@ -46,9 +46,9 @@ public class Jumping : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Spikes")
+      //  if (collision.gameObject.tag == "Spikes")
         {
-            theReset.RestartGame();
+           // theReset.RestartGame();
 
         }
 

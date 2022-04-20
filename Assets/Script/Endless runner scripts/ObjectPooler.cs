@@ -26,7 +26,8 @@ public class ObjectPooler : MonoBehaviour
     }
     public GameObject GetPooledObject()
     {
-        for(int i = 0; i < pooledObjects.Count; i++)
+
+        for (int i = 0; i < pooledObjects.Count; i++)
         {
             if(!pooledObjects[i].activeInHierarchy)
             {
@@ -34,6 +35,7 @@ public class ObjectPooler : MonoBehaviour
             }
         }
         GameObject obj = (GameObject)Instantiate(pooledObject);
+
         obj.SetActive(false);
         pooledObjects.Add (obj);
         return obj;

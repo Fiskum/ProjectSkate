@@ -4,24 +4,43 @@ using UnityEngine;
 
 public class PlatformGeneratorScript: MonoBehaviour
 {
-    public GameObject Buildarray;
+    //public GameObject Buildarray;
 
     public Transform generationPoint;
     public float distanceBetween;
 
     public ObjectPooler[] theObjectPools;
 
+
+    private float minHeight;
+    public Transform maxHeightPoint;
+    private float maxHeight;
+    public float maxHeightChange;
+    private float heightChange;
     //public GameObject[] TheBuildings;
     private int BuildingSelector;
     void Start()
     {
-        
+        minHeight = transform.position.y;
+        maxHeight = maxHeightPoint.position.y;
     }
     void Update()
     {
         if (transform.position.x < generationPoint.position.x)
         {
-            transform.position = new Vector2 (transform.position.x + distanceBetween, transform.position.y);
+
+            heightChange = transform.position.y + Random.Range(maxHeightChange, -maxHeightChange);
+
+            if (heightChange > maxHeight)
+            {
+                heightChange = maxHeight;
+            } else if (heightChange < minHeight)
+            {
+                heightChange = minHeight;
+            }
+
+            transform.position = new Vector2 (transform.position.x + distanceBetween, heightChange);
+
 
             BuildingSelector = Random.Range(0, theObjectPools.Length);
 

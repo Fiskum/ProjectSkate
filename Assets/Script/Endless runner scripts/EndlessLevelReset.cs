@@ -9,18 +9,23 @@ public class EndlessLevelReset : MonoBehaviour
 
     private PlatformDestroyer[] platformList;
 
+<<<<<<< Updated upstream
     public Jumping thePlayer;
     private Vector3 playerStartPosition;
+=======
+    //public Jumping thePlayer;
+    private Vector2 playerStartPosition;
+>>>>>>> Stashed changes
     void Start()
     {
         PlatformStartPoint = PlatformGenerator.position;
-        playerStartPosition = thePlayer.transform.position;
+        //playerStartPosition = thePlayer.transform.position;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
     public void RestartGame()
     {
@@ -28,7 +33,7 @@ public class EndlessLevelReset : MonoBehaviour
     }
     public IEnumerator RestartGameCo()
     {
-        thePlayer.gameObject.SetActive(false);
+        //thePlayer.gameObject.SetActive(false);
         yield return new WaitForSeconds(0.5f);
 
 
@@ -39,8 +44,8 @@ public class EndlessLevelReset : MonoBehaviour
            
         }
 
-        thePlayer.transform.position = playerStartPosition;
+        //thePlayer.transform.position = playerStartPosition;
         PlatformGenerator.position = PlatformStartPoint;
-        thePlayer.gameObject.SetActive(true);
+        //thePlayer.gameObject.SetActive(true);
     }
 }

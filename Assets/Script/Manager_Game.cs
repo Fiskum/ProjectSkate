@@ -51,6 +51,10 @@ public class Manager_Game : MonoBehaviour
 
     [Header("Music")]
     public AudioSource music;
+
+
+    [Header("Level Reset")]
+    public EndlessLevelReset theReset;
     // Start is called before the first frame update
 
     void Awake()
@@ -168,7 +172,7 @@ public class Manager_Game : MonoBehaviour
         playerTransform.position = playerDefaultPosition;
         timer = 0;
         death_timer = death_timer_Start;
-
+        theReset.RestartGame();
         PauseGame();
         UnPauseGame();
     }
