@@ -9,13 +9,10 @@ public class EndlessLevelReset : MonoBehaviour
 
     private PlatformDestroyer[] platformList;
 
-<<<<<<< Updated upstream
-    public Jumping thePlayer;
-    private Vector3 playerStartPosition;
-=======
-    //public Jumping thePlayer;
+    public Manager_Game theManager;
+
     private Vector2 playerStartPosition;
->>>>>>> Stashed changes
+
     void Start()
     {
         PlatformStartPoint = PlatformGenerator.position;
