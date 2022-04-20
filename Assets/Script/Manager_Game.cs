@@ -186,7 +186,7 @@ public class Manager_Game : MonoBehaviour
         {
 
             if (gameState == GameStates.Playing)
-                UI_Timer.text = TimerToClock(timer);
+                UI_Timer.text = TimerToClock(death_timer);
             else
                 UI_Timer.text = TimerToClock(timer_unPause);
           
