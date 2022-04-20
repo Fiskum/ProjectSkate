@@ -8162,7 +8162,6 @@ GameObject:
   - component: {fileID: 1564586162}
   - component: {fileID: 1564586163}
   - component: {fileID: 1564586166}
-  - component: {fileID: 1564586167}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -8336,19 +8335,6 @@ MonoBehaviour:
   Player: {fileID: 1564586158}
   theReset: {fileID: 0}
 --- !u!114 &1564586166
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1564586158}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 549fd882229e2f0428216dba448bf86d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  height: 1.38
---- !u!114 &1564586167
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
