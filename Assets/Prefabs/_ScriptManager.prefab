@@ -1,0 +1,92 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4926913490281926157
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4926913490281926159}
+  - component: {fileID: 4926913490281926156}
+  - component: {fileID: 4926913490281926158}
+  m_Layer: 0
+  m_Name: _ScriptManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4926913490281926159
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4926913490281926157}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 736.6, y: -33.7, z: 1.5065937}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4926913490281926156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4926913490281926157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c68f61bcace7e449ba766f9bf9d7658, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameState: 1
+  timer: 0
+  death_timer: 0
+  death_timer_Start: 30
+  timer_unPause: 2
+  death_y: -33.7
+  playerTransform: {fileID: 0}
+  leaderBoard: {fileID: 0}
+  Canvas_Main: {fileID: 0}
+  UI_Timer: {fileID: 0}
+  UI_Pause: {fileID: 0}
+  UI_PauseScreen: {fileID: 0}
+  UI_PauseScreen_Time: {fileID: 0}
+  UI_PauseScreen_Progress: {fileID: 0}
+  UI_PauseScreen_Percentage: {fileID: 0}
+  UI_PauseScreen_Return: {fileID: 0}
+  UI_VictoryScreen: {fileID: 0}
+  UI_VictoryScreen_Time: {fileID: 0}
+  UI_VictoryScreen_HighScore: {fileID: 0}
+  UI_VictoryScreen_Return: {fileID: 0}
+  music: {fileID: 0}
+--- !u!114 &4926913490281926158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4926913490281926157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acb778d9cef291d4a8997f37201fcfcf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  priceForSkin: 1000
+  priceForParticles: 250
+  minutesToEarnSkin: 60
+  Items:
+  - name: Player_Default
+    price: 0
+    alreadyPurchased: 1
+    colorModifer: {r: 1, g: 1, b: 1, a: 1}
+  - name: Player_Yellow
+    price: 250
+    alreadyPurchased: 0
+    colorModifer: {r: 1, g: 0.80642307, b: 0, a: 1}
+  playerRenderer: {fileID: 0}

@@ -4,14 +4,18 @@ using UnityEngine;
 
 public class Manager_Currency : MonoBehaviour
 {
+
+    public enum ItemType
+    {Skin, Particle}
+
     [System.Serializable]
     public struct Item
     {
         public string name;
+        public ItemType type;
         public int price;
         public bool alreadyPurchased;
         public Color colorModifer;
-
     }
 
 
@@ -122,7 +126,6 @@ public class Manager_Currency : MonoBehaviour
             if (name == Items[i].name)
             {
                 currentItem = Items[i];
-                print("foundItem");
                 break;
             }
         }
@@ -130,12 +133,10 @@ public class Manager_Currency : MonoBehaviour
 
         bool isUnlocked = PlayerPrefs.GetInt("name") == -0;
 
-        Debug.Log(PlayerPrefs.GetInt("name"));
-
         if (isUnlocked)
 								{
-            print("Active");
-            playerRenderer.color = currentItem.colorModifer;
+            if(currentItem.type == ItemType.Skin)
+                playerRenderer.color = currentItem.colorModifer;
 								}
 
     }
