@@ -6,7 +6,7 @@ public class Manager_Currency : MonoBehaviour
 {
 
     public enum ItemType
-    {Skin, Particle}
+    {recolorSkin, Skin, Particle}
 
     [System.Serializable]
     public struct Item
@@ -32,11 +32,14 @@ public class Manager_Currency : MonoBehaviour
 
     [Header("Variables")]
     public SpriteRenderer playerRenderer;
+    ParticleSystem[] playerParticles;
+
 
     // Start is called before the first frame update
     void Start()
     {
         GameManager = GetComponent<Manager_Game>();
+        playerParticles = playerRenderer.GetComponentsInChildren<ParticleSystem>();
 
         if (PlayerPrefs.GetInt("Currency_FirstBoot") != 1)
             FirstTimeBoot();
@@ -134,10 +137,16 @@ public class Manager_Currency : MonoBehaviour
         bool isUnlocked = PlayerPrefs.GetInt("name") == -0;
 
         if (isUnlocked)
-								{
-            if(currentItem.type == ItemType.Skin)
+        {
+            if (currentItem.type == ItemType.Skin)
                 playerRenderer.color = currentItem.colorModifer;
-								}
+
+            if (currentItem.type == ItemType.Particle)
+                for (int j = 0; j < playerParticles.Length; j++)
+                {
+                    playerParticles[j].startColor = currentItem.colorModifer;
+                }
+        }
 
     }
 }
