@@ -5,7 +5,7 @@ using UnityEngine;
 public class Player_ParticlePolish : MonoBehaviour
 {
     ParticleSystem[] particles;
-
+    Animator anim;
 
     public float height = 1.38f;
 
@@ -13,6 +13,7 @@ public class Player_ParticlePolish : MonoBehaviour
     void Start()
     {
         particles = GetComponentsInChildren<ParticleSystem>();
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -24,6 +25,9 @@ public class Player_ParticlePolish : MonoBehaviour
         Debug.DrawRay(transform.position, Vector2.down * height);
 
         bool isGrounded = Physics2D.Raycast(transform.position, Vector2.down, height);
+
+
+        anim.SetBool("isGrounded", isGrounded);
 
         for (int i = 0; i < particles.Length; i++)
             particles[i].enableEmission = isGrounded && horizontalMovement;
