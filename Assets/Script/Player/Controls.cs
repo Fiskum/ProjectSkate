@@ -13,6 +13,9 @@ public class Controls : MonoBehaviour
     bool jumping;
     bool jumpCancelled;
 
+    public GameObject Player;
+    public EndlessLevelReset theReset;
+
     void Update()
     {
         Vector2 velocity = new Vector2(speed * Time.fixedDeltaTime, 0);
@@ -49,5 +52,17 @@ public class Controls : MonoBehaviour
     public void AdjustSpeed(float newSpeed)
     {
         speed = newSpeed;
+
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Spikes")
+        {
+            theReset.RestartGame();
+            Player.transform.position = new Vector2(-10, 0);
+
+        }
+
     }
 }

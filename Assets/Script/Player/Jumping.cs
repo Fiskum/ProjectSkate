@@ -9,6 +9,9 @@ public class Jumping : MonoBehaviour
     public float gravityScale = 10;
     public float fallingGravityScale = 40;
 
+
+    public GameObject Player;
+    public EndlessLevelReset theReset;
     public void Jump()
     {
         if (rb.velocity.y == 0)
@@ -39,5 +42,15 @@ public class Jumping : MonoBehaviour
     void AdjustSpeed(float newSpeed)
     {
         speed = newSpeed;
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Spikes")
+        {
+            theReset.RestartGame();
+
+        }
+
     }
 }
