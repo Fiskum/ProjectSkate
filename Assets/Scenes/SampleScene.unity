@@ -7688,6 +7688,8 @@ MonoBehaviour:
   jumpAmount: 25
   gravityScale: 7
   fallingGravityScale: 14
+  Player: {fileID: 0}
+  theReset: {fileID: 0}
 --- !u!50 &1564586160
 Rigidbody2D:
   serializedVersion: 4
@@ -7834,6 +7836,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 1564586158}
+  theReset: {fileID: 0}
 --- !u!114 &1564586166
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8190,6 +8193,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1765535813}
+    - target: {fileID: 2490563687766190577, guid: 35f102a03a4f3d44fa7e35c58e8efedd, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2490563687802937388, guid: 35f102a03a4f3d44fa7e35c58e8efedd, type: 3}
       propertyPath: m_Name
       value: Canvas
@@ -13788,21 +13795,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45b11bd0c1f607840b71007028d23506, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MinY: -2
-  MaxY: 2
-  Zvalue: 0
-  TimeBtwSpawn: 1
-  SpawnTime: 0
-  Buildarray:
-  - {fileID: 1705918482}
-  - {fileID: 838789223}
-  - {fileID: 2136158301}
-  - {fileID: 1730432679}
-  - {fileID: 1431978768}
-  - {fileID: 1423567489}
-  - {fileID: 1835216607}
-  - {fileID: 793274324}
-  - {fileID: 1831823389}
+  Buildarray: {fileID: 0}
+  generationPoint: {fileID: 0}
+  distanceBetween: 0
+  theObjectPools: []
 --- !u!4 &1985107359
 Transform:
   m_ObjectHideFlags: 0
@@ -13829,7 +13825,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b988da9f2bfcb9a42912b5511d35ce7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  x: 12
 --- !u!50 &1985107361
 Rigidbody2D:
   serializedVersion: 4
