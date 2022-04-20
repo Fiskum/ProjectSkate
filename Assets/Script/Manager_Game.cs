@@ -184,12 +184,33 @@ public class Manager_Game : MonoBehaviour
     {
         if (UI_Timer != null)
         {
+            Color timerColor = Color.white;
 
             if (gameState == GameStates.Playing)
                 UI_Timer.text = TimerToClock(death_timer);
             else
-                UI_Timer.text = TimerToClock(timer_unPause);
-          
+                UI_Timer.text = "" + Mathf.Floor(timer_unPause*10)/10;
+
+
+            if (gameState == GameStates.Playing)
+            {
+                
+                if(death_timer < 10)
+																{
+                    float colorPercentage = (death_timer / 10f);
+
+                    print(colorPercentage);
+
+                    timerColor.g = colorPercentage;
+                    timerColor.b = colorPercentage;
+                }
+
+
+                
+            }
+
+
+            UI_Timer.color = timerColor;
 
 
             //UI_Timer.transform.localScale = Vector3.one * (milliseconds < 10 ? 1.2f : 1);

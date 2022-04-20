@@ -1638,7 +1638,7 @@ MonoBehaviour:
   timer: 0
   death_timer: 0
   death_timer_Start: 30
-  timer_unPause: 2
+  timer_unPause: 4
   death_y: -33.7
   playerTransform: {fileID: 1564586164}
   leaderBoard: {fileID: 1765535815}
@@ -1695,7 +1695,7 @@ MonoBehaviour:
     type: 0
     price: 250
     alreadyPurchased: 0
-    colorModifer: {r: 1, g: 0.80642307, b: 0, a: 1}
+    colorModifer: {r: 1, g: 1, b: 1, a: 1}
   playerRenderer: {fileID: 1564586162}
 --- !u!1 &894823527
 GameObject:
