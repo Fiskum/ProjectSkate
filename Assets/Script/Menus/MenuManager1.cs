@@ -18,6 +18,7 @@ public class MenuManager1 : MonoBehaviour
 
     [Header("Others")]
     public AudioSource music;
+    public AudioClip clickClip;
 
     public void GoToMainMenu()
     {
@@ -81,5 +82,8 @@ public class MenuManager1 : MonoBehaviour
         Manager_Game.GetManager().UnPauseGame();
     }
 
-
+    public void PlaySound()
+    {
+        SoundManager.Instance.Play(clickClip);
+    }
 }

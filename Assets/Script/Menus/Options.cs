@@ -5,6 +5,7 @@ using UnityEngine;
 public class Options : MonoBehaviour
 {
     public AudioSource music;
+    public AudioSource SFX;
     private void Start()
     {
         if (!PlayerPrefs.HasKey("muted"))
@@ -36,6 +37,22 @@ public class Options : MonoBehaviour
         Save();
     }
 
+    public void OnClick_SFX()
+    {
+        if (muted == false)
+        {
+            muted = true;
+            SFX.mute = true;
+        }
+        else
+        {
+            muted = false;
+            SFX.mute = false;
+        }
+
+        Save();
+    }
+
     private void Load()
     {
         muted = PlayerPrefs.GetInt("muted") == 1;
@@ -45,10 +62,6 @@ public class Options : MonoBehaviour
         PlayerPrefs.SetInt("muted", muted ? 1 : 0);
     }
 
-    public void OnClick_SFX()
-    {
-
-    }
 
     public void OnClick_Account()
     {

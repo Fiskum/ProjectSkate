@@ -72,6 +72,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeAdded: 5
+  allowVibrations: 0
+  coinPickupClip: {fileID: 8300000, guid: 70628ce0f6388414b8448c56f94d3263, type: 3}
 --- !u!212 &8846693233470186249
 SpriteRenderer:
   m_ObjectHideFlags: 0

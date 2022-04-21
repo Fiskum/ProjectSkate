@@ -7,6 +7,7 @@ public class ClockPickup : MonoBehaviour
     private Vector2 screenBounds;
     public float timeAdded = 5;
     public bool allowVibrations;
+    public AudioClip coinPickupClip;
 
     private void Start()
     {
@@ -29,6 +30,7 @@ public class ClockPickup : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            SoundManager.Instance.Play(coinPickupClip);
             Manager_Game.GetManager().death_timer += timeAdded;
             Destroy(this.gameObject);
 

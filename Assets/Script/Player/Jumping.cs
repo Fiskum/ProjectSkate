@@ -9,6 +9,7 @@ public class Jumping : MonoBehaviour
     public float gravityScale = 10;
     public float fallingGravityScale = 40;
 
+    public AudioClip jumpClip;
 
     public GameObject Player;
   //  public EndlessLevelReset theReset;
@@ -16,6 +17,7 @@ public class Jumping : MonoBehaviour
     {
         if (rb.velocity.y == 0)
         {
+            SoundManager.Instance.Play(jumpClip);
             rb.AddForce(Vector2.up * jumpAmount, ForceMode2D.Impulse);
         }
        
@@ -24,6 +26,7 @@ public class Jumping : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.W) && rb.velocity.y == Mathf.Round(rb.velocity.y))
         {
+            SoundManager.Instance.Play(jumpClip);
             rb.AddForce(Vector2.up * jumpAmount, ForceMode2D.Impulse);
         }
         if (rb.velocity.y >= 0)
