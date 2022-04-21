@@ -74,6 +74,7 @@ MonoBehaviour:
   timeAdded: 5
   allowVibrations: 0
   coinPickupClip: {fileID: 8300000, guid: 70628ce0f6388414b8448c56f94d3263, type: 3}
+  particleEffect: {fileID: 6232099918590594484, guid: 9e4bbd989dd736d4bbbf3eec5189fd1e, type: 3}
 --- !u!212 &8846693233470186249
 SpriteRenderer:
   m_ObjectHideFlags: 0
