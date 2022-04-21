@@ -36,8 +36,9 @@ public class Jumping : MonoBehaviour
         }
         Vector2 v = rb.velocity;
         v.x = speed;
-        rb.velocity = v;
-        GetComponent<Rigidbody2D>().velocity = v;
+
+        if(rb.bodyType != RigidbodyType2D.Static) // This if statement removes a very annoying Debug.Warning that has been spamming the Console. - Talha
+            rb.velocity = v;
     }
     void AdjustSpeed(float newSpeed)
     {

@@ -21,11 +21,17 @@ public class PlatformGeneratorScript: MonoBehaviour
     private int BuildingSelector;
     void Start()
     {
+        if (generationPoint == null) // If this variable is null, then skip this script entirely. I have a feeling this script isn't even in use anymore, but I won't take the responsibility of removing it. I did remove the error this produced by being 'null' though. - Talha
+            return;
+
         minHeight = transform.position.y;
         maxHeight = maxHeightPoint.position.y;
     }
     void Update()
     {
+        if (generationPoint == null) // If this variable is null, then skip this script entirely. I have a feeling this script isn't even in use anymore, but I won't take the responsibility of removing it. I did remove the error this produced by being 'null' though. - Talha
+            return;
+
         if (transform.position.x < generationPoint.position.x)
         {
 
