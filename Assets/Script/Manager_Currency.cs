@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Manager_Currency : MonoBehaviour
 {
@@ -16,6 +17,7 @@ public class Manager_Currency : MonoBehaviour
         public int price;
         public bool alreadyPurchased;
         public Color colorModifer;
+        public Button button;
     }
 
 
@@ -51,6 +53,17 @@ public class Manager_Currency : MonoBehaviour
             currentItem.alreadyPurchased = PlayerPrefs.GetInt(currentItem.name) == -1;
             if(!currentItem.alreadyPurchased)
                 PlayerPrefs.SetInt(currentItem.name, currentItem.price);
+        }
+
+
+        for (int i = 0; i < Items.Length; i++)
+        {
+            Item currentItem = Items[i];
+
+            currentItem.button.onClick.AddListener(delegate { SelectItem(currentItem.name); });
+
+            if(i != 0)
+                Items[i].button.interactable = true;
         }
     }
 
@@ -121,26 +134,27 @@ public class Manager_Currency : MonoBehaviour
 
     public void SelectItem(string name)
     {
-
         bool isBuying = MakePurchase(name);
 
         Item currentItem = new Item();
 
         for (int i = 0; i < Items.Length; i++)
         {
+            Items[i].button.interactable = true;
             if (name == Items[i].name)
             {
                 currentItem = Items[i];
-                break;
+              
             }
         }
-
 
         bool isUnlocked = PlayerPrefs.GetInt("name") == -0;
 
         if (isUnlocked)
         {
-            if (currentItem.type == ItemType.Skin)
+            currentItem.button.interactable = false;
+
+            if (currentItem.type == ItemType.recolorSkin)
                 playerRenderer.color = currentItem.colorModifer;
 
             if (currentItem.type == ItemType.Particle)
