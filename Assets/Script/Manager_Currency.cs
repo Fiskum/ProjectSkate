@@ -56,7 +56,7 @@ public class Manager_Currency : MonoBehaviour
 
 
 				#region Currency
-				public void RewardRun(float time)
+				public int RewardRun(float time) /// Returns a number representing coins earned.
     {
         float coinPerSecond = (float)priceForSkin / (minutesToEarnSkin * 60);
 
@@ -65,6 +65,8 @@ public class Manager_Currency : MonoBehaviour
 
         PlayerPrefs.SetInt("Currency_Coin", currentCoins + earnedCoins);
         Debug.Log("Deposited '" + earnedCoins + "' coins to your account. \nYour current balance is '" + (currentCoins + earnedCoins) + "' coins.");
+
+        return earnedCoins;
     }
 
     public bool MakePurchase(string itemID)

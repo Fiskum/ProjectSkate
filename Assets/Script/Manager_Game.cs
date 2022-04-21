@@ -127,9 +127,10 @@ public class Manager_Game : MonoBehaviour
             if (timer <= 0)
                 timer = 0; // This is to ensure the final time won't be a negative number.
 
-            UI_PauseScreen.SetActive(true);
-            UI_PauseScreen_Time.text = TimerToClock(timer);
+            int earnedCoins = currencyManager.RewardRun(timer);
 
+            UI_PauseScreen.SetActive(true);
+            UI_PauseScreen_Time.text = TimerToClock(timer) + "\nYou\nearned\n" + earnedCoins + " coins";
 
             float totalDistance = -playerDefaultPosition.x + playerTransform.position.x;
 
@@ -140,7 +141,7 @@ public class Manager_Game : MonoBehaviour
         }
 
         leaderBoard.AddScore(timer, SystemInfo.deviceName);
-        currencyManager.RewardRun(timer);
+       
         Restart();
     }
 
