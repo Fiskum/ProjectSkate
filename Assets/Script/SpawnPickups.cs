@@ -8,6 +8,7 @@ public class SpawnPickups : MonoBehaviour
     public float respawnTime = 5f;
     private Vector2 screenBounds;
     public Manager_Game manager_Game;
+    public Transform player;
     private Vector3 cam;
 
     [Header("PickupSpawnRange")]
@@ -30,7 +31,7 @@ public class SpawnPickups : MonoBehaviour
         if(manager_Game.isPaused == false)
         {
             GameObject a = Instantiate(clockPickupPrefab) as GameObject;
-            a.transform.position = new Vector2(Camera.main.transform.position.x + screenBounds.x + 10, Random.Range(cam.y + top, cam.y - bottom));
+            a.transform.position = new Vector2(player.position.x + screenBounds.x + 5, Random.Range(player.position.y + top, player.position.y - bottom));
         }
     }
     IEnumerator pickupWave()

@@ -1787,10 +1787,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clockPickupPrefab: {fileID: 2051182857752078004, guid: 630f9397e064337449e7b48d42395bdc, type: 3}
-  respawnTime: 5
+  respawnTime: 3
   manager_Game: {fileID: 889704821}
-  top: 13
-  bottom: 5
+  player: {fileID: 1564586164}
+  top: 5
+  bottom: 3
 --- !u!4 &943096677
 Transform:
   m_ObjectHideFlags: 0
