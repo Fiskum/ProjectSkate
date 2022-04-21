@@ -52,6 +52,7 @@ public class Manager_Game : MonoBehaviour
 
     [Header("Music")]
     public AudioSource music;
+    public AudioClip dieClip;
 
 
     [Header("Level Reset")]
@@ -141,7 +142,8 @@ public class Manager_Game : MonoBehaviour
         }
 
         leaderBoard.AddScore(timer, SystemInfo.deviceName);
-       
+
+        SoundManager.Instance.Play(dieClip);
         Restart();
     }
 
