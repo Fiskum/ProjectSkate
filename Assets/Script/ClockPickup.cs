@@ -32,7 +32,8 @@ public class ClockPickup : MonoBehaviour
             Manager_Game.GetManager().death_timer += timeAdded;
             Destroy(this.gameObject);
 
-            Handheld.Vibrate();
+            if(allowVibrations)
+                Handheld.Vibrate();
         }
     }
 }

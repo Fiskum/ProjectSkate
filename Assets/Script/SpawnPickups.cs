@@ -10,7 +10,7 @@ public class SpawnPickups : MonoBehaviour
     public Manager_Game manager_Game;
     public Transform player;
     private Vector3 cam;
-    public bool allowPickupVibrations;
+    public bool allowPickupVibrations = true;
 
     [Header("PickupSpawnRange")]
     public float top = 10;
@@ -43,5 +43,10 @@ public class SpawnPickups : MonoBehaviour
             yield return new WaitForSeconds(respawnTime);
             SpawnPickup();
         }
+    }
+
+    public void ToggleVibrations()
+    {
+        allowPickupVibrations = !allowPickupVibrations;
     }
 }
