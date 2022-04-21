@@ -30,6 +30,9 @@ public class Player_ParticlePolish : MonoBehaviour
         anim.SetBool("isGrounded", isGrounded);
 
         for (int i = 0; i < particles.Length; i++)
-            particles[i].enableEmission = isGrounded && horizontalMovement;
+        {
+
+            particles[i].emissionRate = (isGrounded && horizontalMovement) ? 14 : 0;
+        }
     }
 }
