@@ -1855,6 +1855,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2490563685746850296, guid: 35f102a03a4f3d44fa7e35c58e8efedd, type: 3}
   m_PrefabInstance: {fileID: 1743970584}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &916721865 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2490563685746850301, guid: 35f102a03a4f3d44fa7e35c58e8efedd, type: 3}
+  m_PrefabInstance: {fileID: 1743970584}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 916721863}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af5e837f540467a47b29acf067181ff3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &943096675
 GameObject:
   m_ObjectHideFlags: 0
@@ -8575,10 +8586,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 479487785472647293, guid: 35f102a03a4f3d44fa7e35c58e8efedd, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 479487785472647293, guid: 35f102a03a4f3d44fa7e35c58e8efedd, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 916721865}
+    - target: {fileID: 479487785472647293, guid: 35f102a03a4f3d44fa7e35c58e8efedd, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: OnClick_Music
+      objectReference: {fileID: 0}
+    - target: {fileID: 479487785472647293, guid: 35f102a03a4f3d44fa7e35c58e8efedd, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: Options, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 2490563685710120694, guid: 35f102a03a4f3d44fa7e35c58e8efedd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1765535813}
+    - target: {fileID: 2490563685746850301, guid: 35f102a03a4f3d44fa7e35c58e8efedd, type: 3}
+      propertyPath: music
+      value: 
+      objectReference: {fileID: 1652995249}
     - target: {fileID: 2490563686018946364, guid: 35f102a03a4f3d44fa7e35c58e8efedd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
