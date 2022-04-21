@@ -8454,6 +8454,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1765535813}
+    - target: {fileID: 2490563685746850301, guid: 35f102a03a4f3d44fa7e35c58e8efedd, type: 3}
+      propertyPath: music
+      value: 
+      objectReference: {fileID: 1743970587}
     - target: {fileID: 2490563685925716733, guid: 35f102a03a4f3d44fa7e35c58e8efedd, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -8514,6 +8518,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1765535813}
+    - target: {fileID: 2490563686775116741, guid: 35f102a03a4f3d44fa7e35c58e8efedd, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2490563686790545053, guid: 35f102a03a4f3d44fa7e35c58e8efedd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -8578,6 +8586,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 2490563687802937388, guid: 35f102a03a4f3d44fa7e35c58e8efedd, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2490563687802937389, guid: 35f102a03a4f3d44fa7e35c58e8efedd, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -8626,6 +8638,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1765535813}
+    - target: {fileID: 8509739533070143497, guid: 35f102a03a4f3d44fa7e35c58e8efedd, type: 3}
+      propertyPath: m_Volume
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8509739533070143497, guid: 35f102a03a4f3d44fa7e35c58e8efedd, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: a93f8ff761b11324bb15d4b347159215, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 35f102a03a4f3d44fa7e35c58e8efedd, type: 3}
 --- !u!114 &1743970586 stripped
