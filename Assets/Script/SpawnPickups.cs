@@ -20,6 +20,8 @@ public class SpawnPickups : MonoBehaviour
     {
         cam = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y, Camera.main.transform.position.z);
         StartCoroutine(pickupWave());
+
+        PlayerPrefs.SetInt("AllowVibrations", 1);
     }
 
     private void Update()
@@ -33,7 +35,6 @@ public class SpawnPickups : MonoBehaviour
         {
             GameObject a = Instantiate(clockPickupPrefab) as GameObject;
             a.transform.position = new Vector2(player.position.x + screenBounds.x + 5, Random.Range(player.position.y + top, player.position.y - bottom));
-            a.GetComponent<ClockPickup>().allowVibrations = allowPickupVibrations;
         }
     }
     IEnumerator pickupWave()
@@ -48,5 +49,6 @@ public class SpawnPickups : MonoBehaviour
     public void ToggleVibrations()
     {
         allowPickupVibrations = !allowPickupVibrations;
+        PlayerPrefs.SetInt("AllowVibrations", allowPickupVibrations ? 1 : 0);
     }
 }
