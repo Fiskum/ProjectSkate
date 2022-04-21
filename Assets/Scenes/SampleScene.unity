@@ -1790,8 +1790,8 @@ MonoBehaviour:
   respawnTime: 3
   manager_Game: {fileID: 889704821}
   player: {fileID: 1564586164}
-  top: 5
-  bottom: 3
+  top: 3
+  bottom: 1
 --- !u!4 &943096677
 Transform:
   m_ObjectHideFlags: 0
