@@ -6,6 +6,7 @@ public class ClockPickup : MonoBehaviour
 {
     private Vector2 screenBounds;
     public float timeAdded = 5;
+    public bool allowVibrations;
 
     private void Start()
     {
