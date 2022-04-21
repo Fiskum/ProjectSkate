@@ -131,7 +131,7 @@ public class Manager_Game : MonoBehaviour
             int earnedCoins = currencyManager.RewardRun(timer);
 
             UI_PauseScreen.SetActive(true);
-            UI_PauseScreen_Time.text = TimerToClock(timer) + "\nYou\nearned\n" + earnedCoins + " coins";
+            UI_PauseScreen_Time.text = "\n" + TimerToClock(timer) + "\n\n" + earnedCoins + " coins";
 
             float totalDistance = -playerDefaultPosition.x + playerTransform.position.x;
 
