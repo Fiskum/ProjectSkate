@@ -535,7 +535,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 258509267}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 60.8831, y: -11.5, z: 0}
+  m_LocalPosition: {x: 57.2, y: -11.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1392145447}
@@ -26126,7 +26126,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2087009472}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 42.0113, y: -12.2, z: 0}
+  m_LocalPosition: {x: 50.05, y: -12.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1392145447}
@@ -26195,7 +26195,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87e0bd893ef32c64981a26ab46542f30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parallaxEffectMuliplier: {x: 0.5, y: 0.5}
+  parallaxEffectMuliplier: {x: 0.7, y: 0.7}
   infiniteHorizontal: 1
   infiniteVertical: 0
 --- !u!1 &2095510107
